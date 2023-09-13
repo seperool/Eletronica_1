@@ -1,6 +1,5 @@
 ---
 title: "Relatório de eletrônica 1"
-subtitle: "Laboratório 1"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 #lof: true #adiciona lista de figuras
@@ -22,36 +21,7 @@ output:
   pdf_document: 
     number_sections: true
     toc: false
-bibliography: bibliografia_eletronica1.bib
-csl: abnt.csl
 ---
-
-\thispagestyle{empty}
-
-\newpage
-\pagenumbering{roman}
-
-```{=latex}
-\setcounter{tocdepth}{4}
-\renewcommand{\contentsname}{SUMÁRIO}
-\tableofcontents
-```
-
-\newpage
-
-```{=latex}
-\setcounter{tocdepth}{4}
-\renewcommand{\listfigurename}{LISTA DE FIGURAS}
-\listoffigures
-```
-
-\newpage
-
-```{=latex}
-\setcounter{tocdepth}{4}
-\renewcommand{\listtablename}{LISTA DE TABELAS}
-\listoftables
-```
 
 ```{r Pacotes, message=FALSE, warning=FALSE, echo=FALSE}
 library(knitr)
@@ -69,7 +39,7 @@ library(janitor)
 
 # OBJETIVO
 
-Estudo dirigido de linguagem R.\
+Repositório destinado a criação e armazenamento de relatórios de Eletrônica 1.\
 
 \pagenumbering{arabic}
 \newpage
