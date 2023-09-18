@@ -1,7 +1,11 @@
 ---
 title: "Relatório de eletrônica 1"
 subtitle: "Laboratório 1"
-author: "Sergio Pedro R Oliveira"
+author:
+  - Eduardo Kalleb
+  - Franciellen Thurler Freire Allemão
+  - Sergio Pedro Rodrigues Oliveira
+  - Victor Hugo Queiroz
 date: "`r format(Sys.time(), '%d %B %Y')`"
 #lof: true #adiciona lista de figuras
 #lot: true #adiciona lista de tabelas
