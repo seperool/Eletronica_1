@@ -11,8 +11,9 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
+  pdf_document: 
     number_sections: true
+    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -20,12 +21,11 @@ output:
     number_sections: true
     df_print: paged
   github_document: 
+  odt_document: 
+    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
 bibliography: bibliografia_eletronica1.bib
 csl: abnt.csl
 ---
@@ -65,7 +65,7 @@ library(janitor)
 
 # OBJETIVO
 
-- Implementar um traçador de curvas VxI para dispositivos de 2 terminais.
+- Implementar um traçador de curvas $V \times I$ para dispositivos de 2 terminais.
 - Obter as curvas caraterísticas de vários tipos de componentes, com especial ênfase em diodos.
 
 \pagenumbering{arabic}
@@ -76,23 +76,26 @@ library(janitor)
 Como preparatório para o experimento foi necessário responder as questões $2.a$, $2.b$ e $2.c$.\
 
 ## Questão 2.a
-  O traçador de curvas VxI é um circuito que permite medir e plotar a relação entre a tensão e a corrente de um dispositivo de teste. O circuito é composto pelos seguintes elementos:\
+- O traçador de curvas $V \times I$ é um circuito que permite medir e plotar a relação entre a tensão e a corrente de um dispositivo de teste. O circuito é composto pelos seguintes elementos:\
+  - Transformador:\
+  O transformador é responsável por gerar um sinal de tensão de amplitude constante, independente da carga conectada ao dispositivo de teste.\
+  - Resistência:\
+  A resistência é utilizada para limitar a corrente que flui pelo dispositivo de teste.\
+  - Dispositivo de teste:\
+  O dispositivo de teste é o componente que se deseja medir a relação entre a tensão e a corrente.\
+  - CH1 e CH2:\
+  Os canais CH1 e CH2 são responsáveis por medir as tensões nos terminais do dispositivo de teste.\
 
-Transformador: O transformador é responsável por gerar um sinal de tensão de amplitude constante, independente da carga conectada ao dispositivo de teste.
-Resistência: A resistência é utilizada para limitar a corrente que flui pelo dispositivo de teste.\
-Dispositivo de teste: O dispositivo de teste é o componente que se deseja medir a relação entre a tensão e a corrente.\
-CH1 e CH2: Os canais CH1 e CH2 são responsáveis por medir as tensões nos terminais do dispositivo de teste.\
-O funcionamento do traçador de curvas VxI é o seguinte:\
+- O funcionamento do traçador de curvas $V \times I$ é o seguinte:\
+  - O sinal de tensão do transformador é aplicado ao dispositivo de teste.\
+  - A corrente que flui pelo dispositivo de teste é medida pela resistência.\
+  - As tensões CH1 e CH2 são medidas nos terminais do dispositivo de teste.\
+  - As tensões CH1 e CH2 são plotadas em um gráfico, com a tensão CH1 no eixo X e a tensão CH2 no eixo Y.\
 
-O sinal de tensão do transformador é aplicado ao dispositivo de teste.\
-A corrente que flui pelo dispositivo de teste é medida pela resistência.\
-As tensões CH1 e CH2 são medidas nos terminais do dispositivo de teste.\
-As tensões CH1 e CH2 são plotadas em um gráfico, com a tensão CH1 no eixo X e a tensão CH2 no eixo Y.\
-Se fosse possível plotar as tensões CH1 e CH2 em um gráfico, a relação entre a tensão “V” e a corrente “I” seria a seguinte:\
-
-Tensão CH1: A tensão CH1 é proporcional à tensão “V” aplicada ao dispositivo de teste.\
-Tensão CH2: A tensão CH2 é proporcional à corrente “I” que flui pelo dispositivo de teste.\
-Portanto, o gráfico seria uma reta que passa pela origem, com uma inclinação igual à relação entre a tensão “V” e a corrente “I”.\
+- Se fosse possível plotar as tensões CH1 e CH2 em um gráfico, a relação entre a tensão “V” e a corrente “I” seria a seguinte:\
+  - Tensão CH1: A tensão CH1 é proporcional à tensão “V” aplicada ao dispositivo de teste.\
+  - Tensão CH2: A tensão CH2 é proporcional à corrente “I” que flui pelo dispositivo de teste.\
+  - Portanto, o gráfico seria uma reta que passa pela origem, com uma inclinação igual à relação entre a tensão “V” e a corrente “I”.\
 
 \newpage
 
@@ -100,8 +103,8 @@ Portanto, o gráfico seria uma reta que passa pela origem, com uma inclinação 
 
 Sabendo que a máxima potência que pode dissipar a resistência $R_T$ é $0.25W$, projete $R_T$ para não ser danificado quando o dispositivo de teste é um curto-circuito.
 
-Dado que a tensão foi dada em RMS, podemos passar ela para amplitude:\
-$$RMS = \frac{V_{Amplitude}}{\sqrt{2}}$$
+Dado que a tensão foi dada em $V_{RMS}$, podemos passar ela para a amplitude:\
+$$V_{RMS} = \frac{V_{Amplitude}}{\sqrt{2}}$$
 logo,\
 $$V_{Amplitude} = 15 \times \sqrt{2}$$
 $$V_{Amplitude} = 21.21V$$
@@ -138,7 +141,7 @@ Para cada dispositivo de teste da seguinte lista, esboce a curva $V \times I$ es
 
 ### Questão 2.c3 - Resistor
 
-![Circuito com resistores da série E12.](./Imagens/2CC3-Resitores_E12.jpg){width=80%}
+![Circuito com resistores da série E12.](./Imagens/2CC3-Resitores_E12-circuito.jpg){width=80%}
 
 
 ![Curva $V \times I$ do circuito com resistores da série E12.](./Imagens/2CC3-Resitores_E12.jpg){width=80%}
