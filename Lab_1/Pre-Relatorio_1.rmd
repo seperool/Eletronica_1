@@ -11,9 +11,8 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -21,11 +20,12 @@ output:
     number_sections: true
     df_print: paged
   github_document: 
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
 bibliography: bibliografia_eletronica1.bib
 csl: abnt.csl
 ---
@@ -121,109 +121,109 @@ Para cada dispositivo de teste da seguinte lista, esboce a curva $V \times I$ es
 
 ### Questão 2.c1 - Circuito aberto
 
-![Circuito aberto.](./Imagens/2CC1-circuito_aberto-circuito.jpg){width=80%}
+![Circuito aberto.](./Simulacoes/2CC1-circuito_aberto-circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito aberto.](./Imagens/2CC1-circuito_aberto.jpg){width=80%}
+![Curva $V \times I$ do circuito aberto.](./Simulacoes/2CC1-circuito_aberto.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c2 - Curto-circuito
 
-![Curto-circuito.](./Imagens/2CC2-curto-circuito.jpg){width=80%}
+![Curto-circuito.](./Simulacoes/2CC2-curto-circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do curto-circuito.](./Imagens/2CC2-curto.jpg){width=80%}
+![Curva $V \times I$ do curto-circuito.](./Simulacoes/2CC2-curto.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c3 - Resistor
 
-![Circuito com resistores da série E12.](./Imagens/2CC3-Resitores_E12-circuito.jpg){width=80%}
+![Circuito com resistores da série E12.](./Simulacoes/2CC3-Resitores_E12-circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com resistores da série E12.](./Imagens/2CC3-Resitores_E12.jpg){width=80%}
+![Curva $V \times I$ do circuito com resistores da série E12.](./Simulacoes/2CC3-Resitores_E12.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c4 - Diodo no sentido direto
 
-![Circuito com diodo no sentido direto.](./Imagens/2CC4-diodo_silicio_circuito.jpg){width=80%}
+![Circuito com diodo no sentido direto.](./Simulacoes/2CC4-diodo_silicio_circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com diodo no sentido direto.](./Imagens/2CC4-diodo_silicio.jpg){width=80%}
+![Curva $V \times I$ do circuito com diodo no sentido direto.](./Simulacoes/2CC4-diodo_silicio.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c5 - Diodo zener no sentido direto
 
-![Circuito com diodo zener no sentido direto.](./Imagens/2CC5-diodo_zener_sentido_direto_circuito.jpg){width=80%}
+![Circuito com diodo zener no sentido direto.](./Simulacoes/2CC5-diodo_zener_sentido_direto_circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com diodo zener no sentido direto.](./Imagens/2CC5-diodo_zener_sentido_direto.jpg){width=80%}
+![Curva $V \times I$ do circuito com diodo zener no sentido direto.](./Simulacoes/2CC5-diodo_zener_sentido_direto.jpg){width=80%}
 
 
 \newpage
 ### Questão 2.c6 - Diodo zener no sentido direto em serie com resistor
 
-![Circuito com diodo zener no sentido direto em serie com resistor.](./Imagens/2CC6-diodo_zener_sentido_direto_e_resistor-circuito.jpg){width=80%}
+![Circuito com diodo zener no sentido direto em serie com resistor.](./Simulacoes/2CC6-diodo_zener_sentido_direto_e_resistor-circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com diodo zener no sentido direto em serie com resistor.](./Imagens/2CC6-diodo_zener_sentido_direto_e_resistor.jpg){width=80%}
+![Curva $V \times I$ do circuito com diodo zener no sentido direto em serie com resistor.](./Simulacoes/2CC6-diodo_zener_sentido_direto_e_resistor.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c7 - Diodo zener no sentido reverso em serie com resistor
 
-![Circuito com diodo zener no sentido reverso em serie com resistor.](./Imagens/2CC7-diodo_zener_sentido_reverso_e_resistor-cirtuito.jpg){width=80%}
+![Circuito com diodo zener no sentido reverso em serie com resistor.](./Simulacoes/2CC7-diodo_zener_sentido_reverso_e_resistor-cirtuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com diodo zener no sentido reverso em serie com resistor.](./Imagens/2CC7-diodo_zener_sentido_reverso_e_resistor.jpg){width=80%}
+![Curva $V \times I$ do circuito com diodo zener no sentido reverso em serie com resistor.](./Simulacoes/2CC7-diodo_zener_sentido_reverso_e_resistor.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c8 - Diodo no sentido direto em serie com diodo zener no sentido direto
 
-![Circuito com diodo no sentido direto em serie com diodo zener no sentido direto.](./Imagens/2CC8-diodo_e_zener_sentido_direto-circuito.jpg){width=80%}
+![Circuito com diodo no sentido direto em serie com diodo zener no sentido direto.](./Simulacoes/2CC8-diodo_e_zener_sentido_direto-circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com diodo no sentido direto em serie com diodo zener no sentido direto.](./Imagens/2CC8-diodo_e_zener_sentido_direto.jpg){width=80%}
+![Curva $V \times I$ do circuito com diodo no sentido direto em serie com diodo zener no sentido direto.](./Simulacoes/2CC8-diodo_e_zener_sentido_direto.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c9 - Diodo no sentido direto em serie com diodo zener no sentido reverso
 
-![Circuito com diodo no sentido direto em serie com diodo zener no sentido reverso.](./Imagens/2CC9-diodo_sentido_direto_e_zener_sentido_reverso-circuito.jpg){width=80%}
+![Circuito com diodo no sentido direto em serie com diodo zener no sentido reverso.](./Simulacoes/2CC9-diodo_sentido_direto_e_zener_sentido_reverso-circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com diodo no sentido direto em serie com diodo zener no sentido reverso.](./Imagens/2CC9-diodo_sentido_direto_e_zener_sentido_reverso.jpg){width=80%}
+![Curva $V \times I$ do circuito com diodo no sentido direto em serie com diodo zener no sentido reverso.](./Simulacoes/2CC9-diodo_sentido_direto_e_zener_sentido_reverso.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c10 - Diodo no sentido direto em paralelo com diodo zener no sentido direto
 
-![Circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.](./Imagens/2CC10-diodo_sentido_direto_e_zener_sentido_direto-circuito.jpg){width=80%}
+![Circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.](./Simulacoes/2CC10-diodo_sentido_direto_e_zener_sentido_direto-circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.](./Imagens/2CC10-diodo_sentido_direto_e_zener_sentido_direto.jpg){width=80%}
+![Curva $V \times I$ do circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.](./Simulacoes/2CC10-diodo_sentido_direto_e_zener_sentido_direto.jpg){width=80%}
 
 
 \newpage
 
 ### Questão 2.c11 - Diodo no sentido direto em paralelo com diodo zener no sentido reverso
 
-![Circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.](./Imagens/2CC11-diodo_sentido_direto_e_zener_sentido_reverso-circuito.jpg){width=80%}
+![Circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.](./Simulacoes/2CC11-diodo_sentido_direto_e_zener_sentido_reverso-circuito.jpg){width=80%}
 
 
-![Curva $V \times I$ do circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.](./Imagens/2CC11-diodo_sentido_direto_e_zener_sentido_reverso.jpg){width=80%}
+![Curva $V \times I$ do circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.](./Simulacoes/2CC11-diodo_sentido_direto_e_zener_sentido_reverso.jpg){width=80%}
 
 
 \newpage
