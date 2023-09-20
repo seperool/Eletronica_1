@@ -71,6 +71,9 @@ library(janitor)
 \newpage
 # INTRODUÇÃO
 
+## Experimento
+## Teoria
+
 \pagenumbering{arabic}
 \newpage
 
@@ -87,11 +90,11 @@ library(janitor)
 
 #data.frame
 Materiais <- c("Jumpers",
-               "Protobord",
+               "Protoboard",
                "Resistências de 2K Ohm",
-               "Ociloscopio",
+               "Osciloscópio",
                "Transformador",
-               "Multimetro",
+               "Multímetro da bancada",
                "Diodo",
                "Diodo zener")
 QTD <- c(3,1,2,1,1,1,1,1)
@@ -106,6 +109,8 @@ kable(tb_materiais, col.names = c("Materiais","QTD"),
 \newpage
 
 # DESENVOLVIMENTO
+## Descrição do experimento
+## Resultados
 # CONCLUSÃO
 
 \newpage

@@ -13,13 +13,6 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   odt_document: 
     number_sections: true
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
@@ -110,13 +103,30 @@ Como preparatório para o experimento foi necessário responder as questões $2.
 Sabendo que a máxima potência que pode dissipar a resistência $R_T$ é $0.25W$, projete $R_T$ para não ser danificado quando o dispositivo de teste é um curto-circuito.
 
 Dado que a tensão foi dada em $V_{RMS}$, podemos passar ela para a amplitude:\
-$$V_{RMS} = \frac{V_{Amplitude}}{\sqrt{2}}$$
+
+\begin{equation}
+  V_{RMS} = \frac{V_{Amplitude}}{\sqrt{2}}
+\end{equation}
+
 logo,\
-$$V_{Amplitude} = 15 \times \sqrt{2}$$
-$$V_{Amplitude} = 21.21V$$
+\begin{equation}
+  V_{Amplitude} = 15 \times \sqrt{2}
+\end{equation}
+
+\begin{equation}
+  V_{Amplitude} = 21.21V
+\end{equation}
+
 Com o valor de $V_{Amplitude}$ e a potência dissipada, podemos descobrir a resistência.[@johnson2015fundamentos]\
-$$P = \frac{V^2}{R}$$
-$$R_T = \frac{(21.21)^2}{0.25}$$
+
+\begin{equation}
+  P = \frac{V^2}{R}
+\end{equation}
+
+\begin{equation}
+  R_T = \frac{(21.21)^2}{0.25}
+\end{equation}
+
 Assim descobrimos que o valor de $R_T = 1.8k\Omega$, porém para proteger os dispositivos do circuito é necessario escolher o valor próximo acima do projetado teoricamente na série de resistores E12, este sendo $2.2k\Omega$.\
 
 \newpage
