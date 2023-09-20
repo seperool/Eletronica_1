@@ -42,6 +42,9 @@ library(janitor)
 Repositório destinado a criação e armazenamento de relatórios de Eletrônica 1.\
 
 \pagenumbering{arabic}
+
 \newpage
 
-# BIBLIOGRAFIA
+# Laboratórios
+
+1. Experimento 1: Traçador de Curvas $V \times I$.\
