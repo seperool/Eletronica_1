@@ -26,8 +26,14 @@ output:
   pdf_document: 
     number_sections: true
     toc: false
-bibliography: bibliografia_eletronica1.bib
-csl: abnt.csl
+header-includes:
+  - \usepackage{titling}
+  - \pretitle{\begin{center}
+    \includegraphics{./RMarkdown/azul.png}\LARGE\\}
+  - \posttitle{\end{center}}
+  - \renewcommand{\and}{\\}
+bibliography: RMarkdown/bibliografia_eletronica1.bib
+csl: RMarkdown/abnt.csl
 ---
 
 \thispagestyle{empty}
