@@ -1,6 +1,6 @@
-ESCRITO EM 20/09/23
+ESCRITO EM 21/09/23
 ---
-PARA 21/09/23
+PARA 22/09/23
 ---
 Subir github:
 
@@ -8,13 +8,19 @@ Estudar:
 
 Afazeres:
 	- Imagens do experimento
-		- Pegar imagens que faltam
-		- Inserir imagens do experimento no relatório
+		- Organizar fotos (nomes)
+		- Inserir imagens do experimento no relatório (na ordem para cada experimento)
+			- Desenho do circuito
+			- Circuito na prática
+			- Gráfico do experimento
+			- Gráfico da simulação
 	- Escrever
 		- Introdução
-		- Desenvolvimento
-			- Descrever experimento
 		- Revisar lista de materiais
 			- Tipo didos
+			- Nome da fonte de alimentação usada
+		- Desenvolvimento
+			- Descrever experimento
+			- Resultados
 		- Conclusão
 		- Citar bibliografia
