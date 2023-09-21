@@ -66,6 +66,8 @@ library(dplyr)
 library(tidyr)
 library(data.table)
 library(janitor)
+library(mice)
+library(DescTools)
 ```
 
 \newpage
@@ -111,6 +113,28 @@ kable(tb_materiais, col.names = c("Materiais","QTD"),
 # DESENVOLVIMENTO
 ## Descrição do experimento
 ## Resultados
+
+Comparando os resultados de cada experimento com sua simulação:\
+- Desenho do circuito\
+- Cicuito na prática do experimento\
+- Resultado do experimento (gráfico)\
+- Simulação (gráfico)\
+
+1. Circuito aberto\
+2. Curto-circuito\
+3. Resistor\
+4. Diodo no sentido direto\
+5. Diodo zener no sentido direto\
+6. Diodo zener no sentido direto em serie com resistor\
+7. Diodo zener no sentido reverso em serie com resistor\
+8. Diodo no sentido direto em serie com diodo zener no sentido direto\
+9. Diodo no sentido direto em serie com diodo zener no sentido reverso\
+10. Diodo no sentido direto em paralelo com diodo zener no sentido direto\
+11. Diodo no sentido direto em paralelo com diodo zener no sentido reverso\
+
+
+\newpage
+
 # CONCLUSÃO
 
 \newpage
