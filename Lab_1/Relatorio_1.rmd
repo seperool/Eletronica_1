@@ -91,15 +91,16 @@ library(DescTools)
 ```{r Lista de materiais, echo=FALSE, message=FALSE, warning=FALSE}
 
 #data.frame
-Materiais <- c("Jumpers",
-               "Protoboard",
-               "Resistências de 2K Ohm",
+Materiais <- c("Fonte de tensão de 15 Voltz",
                "Osciloscópio",
                "Transformador",
                "Multímetro da bancada",
+               "Jumpers",
+               "Protoboard",
+               "Resistências de 2K Ohm",
                "Diodo",
                "Diodo zener")
-QTD <- c(3,1,2,1,1,1,1,1)
+QTD <- c(1,1,1,1,4,1,2,1,1)
 tb_materiais <- data.frame(Materiais, QTD)
 
 #Tabela
