@@ -1,30 +1,29 @@
 ---
 title: "Relatório de eletrônica 1"
-subtitle: "Laboratório 1"
 author:
-  - Eduardo Kalleb
-  - Franciellen Thurler Freire Allemão
-  - Sergio Pedro Rodrigues Oliveira
-  - Victor Hugo Queiroz
+- Eduardo Kalleb
+- Franciellen Thurler Freire Allemão
+- Sergio Pedro Rodrigues Oliveira
+- Victor Hugo Queiroz
 date: "`r format(Sys.time(), '%d %B %Y')`"
-#lof: true #adiciona lista de figuras
-#lot: true #adiciona lista de tabelas
-#toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
+  odt_document:
+    number_sections: yes
+  word_document:
+    toc: yes
+    number_sections: yes
+  pdf_document:
+    number_sections: yes
+    toc: no
+  html_document:
+    toc: yes
+    df_print: paged
+subtitle: Laboratório 1
 header-includes:
-  - \usepackage{titling}
-  - \pretitle{\begin{center}
-    \includegraphics{./RMarkdown/azul.png}\LARGE\\}
-  - \posttitle{\end{center}}
-  - \renewcommand{\and}{\\}
+- \usepackage{titling}
+- \pretitle{\begin{center} \includegraphics{./RMarkdown/azul.png}\LARGE\\}
+- \posttitle{\end{center}}
+- \renewcommand{\and}{\\}
 bibliography: RMarkdown/bibliografia_eletronica1.bib
 csl: RMarkdown/abnt.csl
 ---
@@ -93,14 +92,13 @@ library(DescTools)
 #data.frame
 Materiais <- c("Fonte de tensão de 15 Voltz",
                "Osciloscópio",
-               "Transformador",
                "Multímetro da bancada",
                "Jumpers",
                "Protoboard",
                "Resistências de 2K Ohm",
                "Diodo",
                "Diodo zener")
-QTD <- c(1,1,1,1,4,1,2,1,1)
+QTD <- c(1,1,1,4,1,2,1,1)
 tb_materiais <- data.frame(Materiais, QTD)
 
 #Tabela
@@ -121,17 +119,38 @@ Comparando os resultados de cada experimento com sua simulação:\
 - Resultado do experimento (gráfico)\
 - Simulação (gráfico)\
 
-1. Circuito aberto\
-2. Curto-circuito\
-3. Resistor\
-4. Diodo no sentido direto\
-5. Diodo zener no sentido direto\
-6. Diodo zener no sentido direto em serie com resistor\
-7. Diodo zener no sentido reverso em serie com resistor\
-8. Diodo no sentido direto em serie com diodo zener no sentido direto\
-9. Diodo no sentido direto em serie com diodo zener no sentido reverso\
-10. Diodo no sentido direto em paralelo com diodo zener no sentido direto\
-11. Diodo no sentido direto em paralelo com diodo zener no sentido reverso\
+\newpage
+
+### Circuito aberto
+
+
+![](./Simulacoes/2CC1-circuito_aberto-circuito.jpg){width=50%}
+
+
+![](./Experimento_imagens/ex1-circuito_aberto/circuito_aberto.jpeg){width=40%}
+
+
+\newpage
+
+
+![](./Experimento_imagens/ex1-circuito_aberto/grafico-circuito_aberto.jpeg){width=40%}
+
+
+![](./Simulacoes/2CC1-circuito_aberto.jpg){width=50%}
+
+
+\newpage
+
+### Curto-circuito
+### Resistor
+### Diodo no sentido direto
+### Diodo zener no sentido direto
+### Diodo zener no sentido direto em serie com resistor
+### Diodo zener no sentido reverso em serie com resistor
+### Diodo no sentido direto em serie com diodo zener no sentido direto
+### Diodo no sentido direto em serie com diodo zener no sentido reverso
+### Diodo no sentido direto em paralelo com diodo zener no sentido direto
+### Diodo no sentido direto em paralelo com diodo zener no sentido reverso
 
 
 \newpage
