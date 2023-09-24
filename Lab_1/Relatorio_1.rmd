@@ -7,14 +7,14 @@ author:
 - Victor Hugo Queiroz
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
+  pdf_document:
+    number_sections: yes
+    toc: no
   odt_document:
     number_sections: yes
   word_document:
     toc: yes
     number_sections: yes
-  pdf_document:
-    number_sections: yes
-    toc: no
   html_document:
     toc: yes
     df_print: paged
@@ -142,7 +142,45 @@ Comparando os resultados de cada experimento com sua simulação:\
 \newpage
 
 ### Curto-circuito
+
+
+![](./Simulacoes/2CC2-curto-circuito.jpg){width=50%}
+
+
+![](./Experimento_imagens/ex2-curto-circuito/curto-circuito.jpeg){width=40%}
+
+
+\newpage
+
+
+![](./Experimento_imagens/ex2-curto-circuito/grafico-curto-circuito.jpeg){width=40%}
+
+
+![](./Simulacoes/2CC2-curto.jpg){width=50%}
+
+
+\newpage
+
 ### Resistor
+
+
+![](./Simulacoes/2CC3-Resitores_E12-circuito.jpg){width=50%}
+
+
+![](./Experimento_imagens/ex3-resistor/circuito_resistivo.jpeg){width=40%}
+
+
+\newpage
+
+
+![](./Experimento_imagens/ex3-resistor/grafico-circuito_resistivo.jpeg){width=40%}
+
+
+![](./Simulacoes/2CC3-Resitores_E12.jpg){width=50%}
+
+
+\newpage
+
 ### Diodo no sentido direto
 ### Diodo zener no sentido direto
 ### Diodo zener no sentido direto em serie com resistor
