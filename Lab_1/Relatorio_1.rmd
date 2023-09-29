@@ -7,11 +7,11 @@ author:
 - Victor Hugo Queiroz
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
+  odt_document:
+    number_sections: yes
   pdf_document:
     number_sections: yes
     toc: no
-  odt_document:
-    number_sections: yes
   word_document:
     toc: yes
     number_sections: yes
@@ -123,40 +123,44 @@ Comparando os resultados de cada experimento com sua simulação:\
 
 ### Circuito aberto
 
+  O primeiro experimento foi projetado com o circuito aberto no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_aberto}. O circuito foi montado como apresentado na figura \ref{circuito_aberto_exp}. O resultado obtido pelo gráfico presente no osciloscópio é uma linha reta no eixo x, representando a tensão sobre o nó CH1, figura \ref{circuito_aberto_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_aberto_simulado}.\
+  Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![](./Simulacoes/2CC1-circuito_aberto-circuito.jpg){width=50%}
+![Circuito aberto.\label{circuito_aberto}](./Simulacoes/relatorio/2CC1-Circuito_aberto.png){width=50%}
 
 
-![](./Experimento_imagens/ex1-circuito_aberto/circuito_aberto.jpeg){width=40%}
+![Montagem do circuito aberto para o experimento.\label{circuito_aberto_exp}](./Experimento_imagens/ex1-circuito_aberto/circuito_aberto.jpeg){width=35%}
 
 
 \newpage
 
 
-![](./Experimento_imagens/ex1-circuito_aberto/grafico-circuito_aberto.jpeg){width=40%}
+![Gráfico do osciloscópio para o circuito aberto.\label{circuito_aberto_grafico_exp}](./Experimento_imagens/ex1-circuito_aberto/grafico-circuito_aberto.jpeg){width=35%}
 
 
-![](./Simulacoes/2CC1-circuito_aberto.jpg){width=50%}
+![Gráfico do circuito aberto simulado computacionalmente.\label{circuito_aberto_simulado}](./Simulacoes/relatorio/2CC1-grafico-circuito_aberto.png){width=50%}
 
 
 \newpage
 
 ### Curto-circuito
 
+  O segundo experimento foi projetado com o circuito em curto no lugar do dispositivo de teste, como pode ser observado pela figura \ref{curto-circuito}. O circuito foi montado como apresentado na figura \ref{curto-circuito_exp}. O resultado obtido pelo gráfico presente no osciloscópio é uma linha reta no eixo y, que representa a corrente que flui do nó CH1 para o terra, figura \ref{curto-circuito_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{curto-circuito_simulado}.\
+  Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![](./Simulacoes/2CC2-curto-circuito.jpg){width=50%}
+![Curto-circuito.\label{curto-circuito}](./Simulacoes/relatorio/2CC2-curto-circuito.png){width=50%}
 
 
-![](./Experimento_imagens/ex2-curto-circuito/curto-circuito.jpeg){width=40%}
+![Montagem do curto-circuito para o experimento.\label{curto-circuito_exp}](./Experimento_imagens/ex2-curto-circuito/curto-circuito.jpeg){width=35%}
 
 
 \newpage
 
 
-![](./Experimento_imagens/ex2-curto-circuito/grafico-curto-circuito.jpeg){width=40%}
+![Gráfico do osciloscópio para o curto-circuito.\label{curto-circuito_grafico_exp}](./Experimento_imagens/ex2-curto-circuito/grafico-curto-circuito.jpeg){width=35%}
 
 
-![](./Simulacoes/2CC2-curto.jpg){width=50%}
+![Gráfico do curto-circuito simulado computacionalmente.\label{curto-circuito_simulado}](./Simulacoes/relatorio/2CC2-grafico-curto-circuito.png){width=50%}
 
 
 \newpage
@@ -164,24 +168,48 @@ Comparando os resultados de cada experimento com sua simulação:\
 ### Resistor
 
 
-![](./Simulacoes/2CC3-Resitores_E12-circuito.jpg){width=50%}
+  O terceiro experimento foi projetado com uma resistência de $2.0k\Omega$ no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_resistivo}. O circuito foi montado como apresentado na figura \ref{circuito_resistivo_exp}. O resultado obtido pelo gráfico presente no osciloscópio é uma linha reta enclinada, que representa bem a relação da lei de Ohm, $V = R \times I$ [@johnson2015fundamentos], figura \ref{circuito_resistivo_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_resistivo_simulado}.\
+  Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
+
+![Circuito com resistor de $2.0k\Omega$.\label{circuito_resistivo}](./Simulacoes/relatorio/2CC3-Circuito-resistivo.png){width=50%}
 
 
-![](./Experimento_imagens/ex3-resistor/circuito_resistivo.jpeg){width=40%}
+![Montagem do circuito com resistor de $2.0k\Omega$ para o experimento.\label{circuito_resistivo_exp}](./Experimento_imagens/ex3-resistor/circuito_resistivo.jpeg){width=35%}
 
 
 \newpage
 
 
-![](./Experimento_imagens/ex3-resistor/grafico-circuito_resistivo.jpeg){width=40%}
+![Gráfico do osciloscópio para o circuito com resistor de $2.0k\Omega$.\label{circuito_resistivo_grafico_exp}](./Experimento_imagens/ex3-resistor/grafico-circuito_resistivo.jpeg){width=35%}
 
 
-![](./Simulacoes/2CC3-Resitores_E12.jpg){width=50%}
+![Gráfico do circuito com resistor de $2.0k\Omega$, simulado computacionalmente.\label{circuito_resistivo_simulado}](./Simulacoes/relatorio/2CC3-grafico-resistivo.png){width=50%}
 
 
 \newpage
 
 ### Diodo no sentido direto
+
+  O quarto experimento foi projetado com um diodo de silício, no sentido da corrente (direto), no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_exp}. O resultado obtido pelo gráfico presente no osciloscópio é a curva exponencial caracteristica do funcionamento de um diodo de silício com $V_k \thickapprox 0.7V$, figura \ref{circuito_diodo_direto_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_simulado}.\
+  Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
+
+![Circuito com diodo no sentido direto.\label{circuito_diodo_direto}](./Simulacoes/relatorio/2CC4-diodo_direto.png){width=50%}
+
+
+![Montagem do circuito com diodo no sentido direto.\label{circuito_diodo_direto_exp}](./Experimento_imagens/ex4-diodo_direto/circuito-diodo_direto.jpeg){width=35%}
+
+
+\newpage
+
+
+![Gráfico do osciloscópio para o circuito com diodo no sentido direto.\label{circuito_diodo_direto_grafico_exp}](./Experimento_imagens/ex4-diodo_direto/grafico-diodo_direto.jpeg){width=35%}
+
+
+![Gráfico do circuito com diodo no sentido direto, simulado computacionalmente.\label{circuito_diodo_direto_simulado}](./Simulacoes/relatorio/2CC4-grafico-diodo_direto.png){width=50%}
+
+
+\newpage
+
 ### Diodo zener no sentido direto
 ### Diodo zener no sentido direto em serie com resistor
 ### Diodo zener no sentido reverso em serie com resistor
