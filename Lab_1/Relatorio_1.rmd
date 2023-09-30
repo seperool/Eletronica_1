@@ -1,5 +1,6 @@
 ---
-title: "Relatório de eletrônica 1"
+title: "RELATÓRIO DE ELETRÔNICA 1"
+subtitle: "Experimento 1: Traçador de Curvas V x I"
 author:
 - Eduardo Kalleb
 - Franciellen Thurler Freire Allemão
@@ -7,18 +8,17 @@ author:
 - Victor Hugo Queiroz
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document:
+  odt_document:
     number_sections: yes
-    toc: no
   word_document:
     toc: yes
     number_sections: yes
-  odt_document:
+  pdf_document:
     number_sections: yes
+    toc: no
   html_document:
     toc: yes
     df_print: paged
-subtitle: Laboratório 1
 header-includes:
 - \usepackage{titling}
 - \pretitle{\begin{center} \includegraphics{./RMarkdown/azul.png}\LARGE\\}
@@ -97,8 +97,9 @@ Materiais <- c("Fonte de tensão de 15 Voltz",
                "Protoboard",
                "Resistências de 2K Ohm",
                "Diodo de silício",
-               "Diodo zener")
-QTD <- c(1,1,1,4,1,2,1,1)
+               "Diodo zener",
+               "*Software* de simulação de circuitos eletrônicos: LTSpice")
+QTD <- c(1,1,1,4,1,2,1,1,1)
 tb_materiais <- data.frame(Materiais, QTD)
 
 #Tabela
@@ -111,6 +112,20 @@ kable(tb_materiais, col.names = c("Materiais","QTD"),
 
 # DESENVOLVIMENTO
 ## Descrição do experimento
+
+O laboratório de Eletrônica 1 foi conduzido com o objetivo de familiarizar os alunos com o uso do Traçador de Curvas $V \times I$, para dispositivos de 2 terminais, um instrumento fundamental para o estudo e caracterização de componentes eletrônicos, como resistores e diodos. O experimento visa analisar as relações entre a tensão (V) aplicada a um componente e a corrente (I) que flui através dele. Onde o principal componente utilizado foi o diodo.\
+
+Sendo assim, foi montado pelo grupo um traçador de curvas na protoboard, como mostra a figura \ref{circuito_aberto_exp}. A partir dele foram testadas 11 combinações diferentes, com diodo, diodo zener, resistores e sem componentes (circuito em curto e aberto).\
+
+Verificamos se o Traçador de Curvas $V \times I$ estava devidamente conectado à fonte de alimentação e ao multímetro. Certificamo-nos de que todos os cabos estavam corretamente encaixados e seguros.\
+
+Conectamos o componente eletrônico aos terminais de teste do Traçador de Curvas $V \times I$. Com o osciloscópio digital no modo XY e as escalas adequadas, plotamos os dados gráficamente, com a tensão no eixo X e a corrente no eixo Y.\
+
+Analisamos a curva $V \times I$ obtida para extrair informações sobre o comportamento do componente testado.\
+
+Assim foram testados os 11 tipos de circuitos: circuito aberto, curto-circuito resistor, diodo no sentido direto, diodo zener no sentido direto, diodo zener no sentido direto em serie com resistor, diodo zener no sentido reverso em serie com resistor, diodo no sentido direto em serie com diodo zener no sentido direto, diodo no sentido direto em serie com diodo zener no sentido reverso, diodo no sentido direto em paralelo com diodo zener no sentido direto, diodo no sentido direto em paralelo com diodo zener no sentido reverso.\
+
+Para cada curva plotada no osciloscópio, foram fotografadas e simuladas computacionalmente, para sua verificação e comparação teórica e prática.\
 
 \newpage
 
@@ -249,7 +264,7 @@ kable(tb_materiais, col.names = c("Materiais","QTD"),
 
 \newpage
 
-### Diodo zener no sentido reverso em serie com resistor
+### Diodo zener no sentido reverso em série com resistor
 
   O sétimo experimento foi projetado com um diodo zener, no sentido da reverso, em série com um resistor de $2.0K\Omega$, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_zener_reverso_serie_resistor}. O circuito foi montado como apresentado na figura \ref{circuito_zener_reverso_serie_resistor_exp}. O resultado obtido pelo gráfico presente no osciloscópio é um segmento de reta onde o diodo zener atua como uma bateria quando na região ruptura onde $V_{ZK} \thickapprox -1.4V$ associado a uma resistencia, apresentando assim um segmento de reta caracterísco da equação de Ohm para resistores (modelo de retas, ou segmentos lineares) [@sedra2007microeletrônica] , figura \ref{circuito_zener_reverso_serie_resistor_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_zener_reverso_serie_resistor_simulado}.\
   Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
