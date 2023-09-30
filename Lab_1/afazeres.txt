@@ -1,28 +1,14 @@
-ESCRITO EM 24/09/23
+ESCRITO EM 30/09/23
 ---
-PARA 25/09/23
+PARA 02/10/23
 ---
 Subir github:
 
 Estudar:
 
 Afazeres:
-	- Simulação
-		- Resistor 2k Ohm
-	- Imagens do experimento
-		- Organizar fotos (nomes)
-		- Inserir imagens do experimento no relatório (na ordem para cada experimento)
-			- Desenho do circuito
-			- Circuito na prática
-			- Gráfico do experimento
-			- Gráfico da simulação
-	- Escrever
+	- Outros membros do grupo (revisar e formatar)
 		- Introdução
-		- Revisar lista de materiais
-			- Tipo didos
-			- Nome da fonte de alimentação usada
 		- Desenvolvimento
 			- Descrever experimento
-			- Resultados
 		- Conclusão
-		- Citar bibliografia
