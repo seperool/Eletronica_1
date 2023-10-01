@@ -10,12 +10,12 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   odt_document:
     number_sections: yes
-  word_document:
-    toc: yes
-    number_sections: yes
   pdf_document:
     number_sections: yes
     toc: no
+  word_document:
+    toc: yes
+    number_sections: yes
   html_document:
     toc: yes
     df_print: paged
@@ -72,10 +72,31 @@ library(DescTools)
 \newpage
 # INTRODUÇÃO
 
-## Experimento
-## Teoria
+Um átomo pode conter no máximo oito elétrons na camada de valência, sendo este, considerado estável. Porém, os átomos podem também se transformar em íon negativo ou positivo, ganhando ou perdendo elétrons da camada de valência, respectivamente. Os elétrons livres de um átomo são responsáveis pelo surgimento da corrente elétrica num determinado material. Logo se pode classificar os materiais em condutores, isolantes e semicondutores, conforme a estrutura do átomo que o compõe. Os diodos são cruciais na eletrônica moderna, desempenhando diversas funções, desde a retificação até a regulação de tensão. Este relatório tem como objetivo fornecer uma compreensão abrangente dos diodos, sua operação, características e aplicações. Neste experimento mediremos as características de vários tipos de componentes, com especial ênfase em diodos. A partir dos testes para cada dispositivo da lista, foram estabelecidos modelos válidos para as diversas regiões das curvas características.  
+
+A corrente elétrica fornecida pelas empresas energéticas é alternada, ou seja, mudam sua polaridade entre positivo e negativo com uma frequência de 60Hz. Porém, a maioria dos aparelhos eletrônicos que utilizamos funciona somente com corrente contínua. Na eletrônica, um dos componentes mais utilizados são os diodos semicondutores. Tais dispositivos tem por característica principal, deixar com que a corrente e seus terminais fluam de forma mais fácil em uma direção do que em outra. Os diodos são amplamente utilizados em circuito multiplicadores de tensão, ceifadores ou ainda em circuitos retificadores, responsáveis por converter uma tensão de entrada alternada em uma saída de tensão contínua.\
+
+Diodos são dispositivos semicondutores de dois terminais que compreendem uma junção PN. A região do tipo P é deficiente em elétrons, enquanto a região do tipo N possui excesso de elétrons [@boylestad2013dispositivos]. A junção entre essas regiões é a chave para a operação do diodo. O seu comportamento elétrico depende da distribuição de impurezas e da geometria da junção. Para a fabricação desse tipo de diodo, é preciso realizar um processo de dopagem no material semicondutor a fim de se obter duas regiões com atuações diferentes: Região P e Região N. A Região P é caracterizada por apresentar "lacunas de elétrons" devido ao processo de dopagem, ou seja, essa susceptibilidade em receber elétrons a nomeia como portadora de carga positiva. Já a Região N é conhecida por ter "sobra de elétrons", sendo caracterizada como portadora de carga negativa. Assim, conforme a figura \ref{Diodo}, conclui-se que o terminal representado pela linha vertical está conectado à região N. São classificados como diodos de sinal, retificadores, Zeners, reguladores de tensão, detectores, emissores de luz, foto-diodos, etc.\
+
+![Simbologia do diodo e sua apresentação comercial mais comum, respectivamente.\label{Diodo}](./RMarkdown/Imagens/figure_1.png){}
+
+
+Os diodos operam segundo o princípio da junção PN. Na polarização direta (Figura \ref{polarizacao}.a), onde o lado P é positivo e o lado N é negativo, os elétrons fluem de N para P, criando uma região condutora. Na polarização reversa, ocorre o oposto e forma-se uma região de depleção, inibindo o fluxo de corrente [@sedra2007microeletrônica]. O comportamento do diodo depende da polarização. Na polarização direta, a corrente flui facilmente devido à redução da barreira de potencial, resultando em uma queda de tensão (normalmente $0.7V$ para diodos de silício) [@boylestad2013dispositivos]. Na polarização reversa (Figura \ref{polarizacao}.b), a resistência é alta e a corrente é mínima.\
 
 \pagenumbering{arabic}
+\newpage
+
+![a) Diodo polarizado diretamente b) Diodo polarizado reversamente\label{polarizacao}](./RMarkdown/Imagens/figure_2.png){}
+
+
+À medida que a tensão da fonte aumenta, o diodo se aproxima de um ponto no qual a corrente aumenta repentinamente. A região onde ocorre essa ruptura do diodo é determinada Região Zener. Para garantir que o diodo continue funcionando e não se submeta a tal tensão, é possível limitar a corrente que passa por ele implementando um resistor em série nesse circuito. Esse comportamento específico do diodo gera uma curva de corrente em relação à tensão muito característica.\
+
+A curva característica de um diodo mostra que em polarização direta só haverá corrente significativa depois de vencida completamente a barreira de potencial interna que impõem uma queda de tensão de aproximadamente $0.7V$ entre seus terminais, para diodos de Silício. A partir desse ponto a corrente aumenta muito para pequenos acréscimos de tensão aplicada. Pode-se dizer que a tensão entre seus terminais permanece praticamente constante quando o diodo conduz. Em polarização reversa, a corrente é praticamente nula até que se atinja certo valor de tensão, diferente para diferentes tipos de diodos, conhecida como (tensão de Break Down). A partir desse valor, inicia-se um processo de condução no sentido inverso. Nesta condição o diodo está no estado de ruptura, pois foi vencida a barreira de potencial interna. Há diodos fabricados para trabalhar na condição de polarização inversa e suportar a dissipação de potência que ocorre nessa situação. São os diodos conhecidos como Zener, são diodos de efeito avalanche.\
+
+O Diodo Zener é um dispositivo semicondutor especialmente projetado para operar na região reversa ou reversamente polarizado. O uso do componente eletrônico é o elemento principal dos reguladores de tensão, circuitos que mantêm a tensão na carga quase constante, independente da alta variação na tensão de linha e na resistência de carga. Mesmo apresentando uma variação na corrente, o diodo Zener preserva a tensão na saída, comportando-se como regulador de tensão tal como o diodo retificador ele é formado por um Junção PN. O físico responsável pela descoberta dessa propriedade foi Clarence Zener (1905-1993), e o nome do diodo zener é uma homenagem a esse cientista. O Funcionamento desse dispositivo está relacionado a dois fenômenos: efeito Zener e o efeito avalanche. A Tensão de ruptura (Break-down) Também referida como “tensão de Zener” corresponde à tensão de polarização reversa para a qual o dispositivo rapidamente passa a conduzir elevados níveis de corrente no sentido reverso, ou seja, do cátodo para o ânodo.\
+
+Ao polarizar um diodo Zener com uma tensão reversa igual a $V_{ZK}$ há o rompimento das ligações covalentes no semicondutor, esse efeito se chama ruptura Zener e depende do grau de dopagem do material semicondutor. Com o aumento da tensão reversa sobre o diodo também a um aumento da velocidade das cargas elétrica no semicondutor. Esse aumento de velocidade faz com que os choques dos elétrons livres contra a rede cristalina produzam energia suficiente para libertar elétrons da camada de valência (ionização). O Elétron que foi libertado também é acelerado libertando outros elétrons, isso dá origem a uma reação em cadeia conhecida com efeito avalanche.\
+
 \newpage
 
 # OBJETIVO
@@ -104,7 +125,7 @@ tb_materiais <- data.frame(Materiais, QTD)
 
 #Tabela
 kable(tb_materiais, col.names = c("Materiais","QTD"),
-      align = "cc", caption = "Lista de materiais")
+                align = "cc", caption = "Lista de materiais")
 
 ```
 
