@@ -8,11 +8,11 @@ author:
 - Victor Hugo Queiroz
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  odt_document:
-    number_sections: yes
   pdf_document:
     number_sections: yes
     toc: no
+  odt_document:
+    number_sections: yes
   word_document:
     toc: yes
     number_sections: yes
@@ -397,6 +397,8 @@ Para cada curva plotada no osciloscópio, foram fotografadas e simuladas computa
 \newpage
 
 # CONCLUSÃO
+
+As características elétricas de componentes eletrônicos são fundamentais para o entendimento do funcionamento desses dispositivos. No experimento, foi montado um traçador de curvas de tensão por corrente ($V \times I$) ligado a um osciloscópio para analisar o comportamento de 11 dispositivos de teste em diferentes condições de operação. Os resultados obtidos foram comparados aos resultados teóricos e mostraram uma excelente concordância, o que comprova a validade do método experimental utilizado.\
 
 \newpage
 
