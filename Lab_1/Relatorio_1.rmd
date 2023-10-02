@@ -11,10 +11,10 @@ output:
   pdf_document:
     number_sections: yes
     toc: no
-  odt_document:
-    number_sections: yes
   word_document:
     toc: yes
+    number_sections: yes
+  odt_document:
     number_sections: yes
   html_document:
     toc: yes
@@ -118,7 +118,7 @@ Materiais <- c("Fonte de tensão de 15 Voltz",
                "Protoboard",
                "Resistências de 2K Ohm",
                "Diodo de silício",
-               "Diodo zener",
+               "Diodo Zener",
                "*Software* de simulação de circuitos eletrônicos: LTSpice")
 QTD <- c(1,1,1,4,1,2,1,1,1)
 tb_materiais <- data.frame(Materiais, QTD)
@@ -144,7 +144,13 @@ Conectamos o componente eletrônico aos terminais de teste do Traçador de Curva
 
 Analisamos a curva $V \times I$ obtida para extrair informações sobre o comportamento do componente testado.\
 
-Assim foram testados os 11 tipos de circuitos: circuito aberto, curto-circuito resistor, diodo no sentido direto, diodo zener no sentido direto, diodo zener no sentido direto em serie com resistor, diodo zener no sentido reverso em serie com resistor, diodo no sentido direto em serie com diodo zener no sentido direto, diodo no sentido direto em serie com diodo zener no sentido reverso, diodo no sentido direto em paralelo com diodo zener no sentido direto, diodo no sentido direto em paralelo com diodo zener no sentido reverso.\
+Assim foram testados os 11 tipos de circuitos: circuito aberto, curto-circuito resistor, diodo no sentido direto, diodo Zener no sentido direto, diodo Zener no sentido direto em serie com resistor, diodo Zener no sentido reverso em serie com resistor, diodo no sentido direto em serie com diodo Zener no sentido direto, diodo no sentido direto em serie com diodo Zener no sentido reverso, diodo no sentido direto em paralelo com diodo Zener no sentido direto, diodo no sentido direto em paralelo com diodo Zener no sentido reverso.\
+
+Na escolha dos componentes, optamos por utilizar um diodo de silício de $V_k = 0.7V$ e um diodo Zener $V_K = 0.7V$ e $V_{ZK} = -1.4V$.\
+
+Sabendo que a máxima potência que pode dissipar a resistência é $0.25W$, projetamos teoricamente, que precisaríamos de um resistor acima de $1.8k\Omega$, sendo o mais próximo e superior na série E12 $2.2K\Omega$. Porém no laboratório não foi encontrado o resistor de $2.2K\Omega$, assim o mais próximo disponível $2k\Omega$, sendo este usado no experimento.\
+
+A fonte de tensão proposta pelo professor, esta em corrente alternada em $RMS = 15V$, onde tivemos que converter para Amplitude, já que no simulador utiliza apenas Amplitude. E na prática utilizamos uma fonte contínua de 15Volts.\
 
 Para cada curva plotada no osciloscópio, foram fotografadas e simuladas computacionalmente, para sua verificação e comparação teórica e prática.\
 
@@ -241,156 +247,156 @@ Para cada curva plotada no osciloscópio, foram fotografadas e simuladas computa
 
 \newpage
 
-### Diodo zener no sentido direto
+### Diodo Zener no sentido direto
 
-  O quinto experimento foi projetado com um diodo zener, no sentido da corrente (direto), no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_zener_direto}. O circuito foi montado como apresentado na figura \ref{circuito_zener_direto_exp}. O resultado obtido pelo gráfico presente no osciloscópio é a curva exponencial característica do funcionamento de um diodo com $V_k \thickapprox 0.7V$, figura \ref{circuito_zener_direto_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_zener_direto_simulado}.\
+  O quinto experimento foi projetado com um diodo Zener, no sentido da corrente (direto), no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_zener_direto}. O circuito foi montado como apresentado na figura \ref{circuito_zener_direto_exp}. O resultado obtido pelo gráfico presente no osciloscópio é a curva exponencial característica do funcionamento de um diodo com $V_k \thickapprox 0.7V$, figura \ref{circuito_zener_direto_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_zener_direto_simulado}.\
   Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![Circuito com diodo zener no sentido direto.\label{circuito_zener_direto}](./Simulacoes/relatorio/2CC5-zener_direto.png){width=50%}
+![Circuito com diodo Zener no sentido direto.\label{circuito_zener_direto}](./Simulacoes/relatorio/2CC5-zener_direto.png){width=50%}
 
 
-![Montagem do circuito com diodo zener no sentido direto.\label{circuito_zener_direto_exp}](./Experimento_imagens/ex5-zener_direto/circuito-zener_direto.jpeg){width=35%}
-
-
-\newpage
-
-
-![Gráfico do osciloscópio para o circuito com diodo zener no sentido direto.\label{circuito_zener_direto_grafico_exp}](./Experimento_imagens/ex5-zener_direto/grafico-zener_direto.jpeg){width=35%}
-
-
-![Gráfico do circuito com diodo zener no sentido direto, simulado computacionalmente.\label{circuito_zener_direto_simulado}](./Simulacoes/relatorio/2CC5-grafico-zener_direto.png){width=50%}
+![Montagem do circuito com diodo Zener no sentido direto.\label{circuito_zener_direto_exp}](./Experimento_imagens/ex5-zener_direto/circuito-zener_direto.jpeg){width=35%}
 
 
 \newpage
 
-### Diodo zener no sentido direto em série com resistor
 
-  O sexto experimento foi projetado com um diodo zener, no sentido da corrente (direto), em série com um resistor de $2.0K\Omega$, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_zener_direto_serie_resistor}. O circuito foi montado como apresentado na figura \ref{circuito_zener_direto_serie_resistor_exp}. O resultado obtido pelo gráfico presente no osciloscópio é um segmento de reta onde o diodo atua como uma bateria quando na região onde $V_k \thickapprox 0.7V$ associado a uma resistencia, apresentando assim um segmento de reta caracterísco da equação de Ohm para resistores (modelo de retas, ou segmentos lineares) [@sedra2007microeletrônica], figura \ref{circuito_zener_direto_serie_resistor_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_zener_direto_serie_resistor_simulado}.\
+![Gráfico do osciloscópio para o circuito com diodo Zener no sentido direto.\label{circuito_zener_direto_grafico_exp}](./Experimento_imagens/ex5-zener_direto/grafico-zener_direto.jpeg){width=35%}
+
+
+![Gráfico do circuito com diodo Zener no sentido direto, simulado computacionalmente.\label{circuito_zener_direto_simulado}](./Simulacoes/relatorio/2CC5-grafico-zener_direto.png){width=50%}
+
+
+\newpage
+
+### Diodo Zener no sentido direto em série com resistor
+
+  O sexto experimento foi projetado com um diodo Zener, no sentido da corrente (direto), em série com um resistor de $2.0K\Omega$, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_zener_direto_serie_resistor}. O circuito foi montado como apresentado na figura \ref{circuito_zener_direto_serie_resistor_exp}. O resultado obtido pelo gráfico presente no osciloscópio é um segmento de reta onde o diodo atua como uma bateria quando na região onde $V_k \thickapprox 0.7V$ associado a uma resistencia, apresentando assim um segmento de reta caracterísco da equação de Ohm para resistores (modelo de retas, ou segmentos lineares) [@sedra2007microeletrônica], figura \ref{circuito_zener_direto_serie_resistor_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_zener_direto_serie_resistor_simulado}.\
   Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![Circuito com diodo zener no sentido direto em série com resistor de $2.0K\Omega$.\label{circuito_zener_direto_serie_resistor}](./Simulacoes/relatorio/2CC6-Circuito-zener_direto_serie_resistor_2k.png){width=50%}
+![Circuito com diodo Zener no sentido direto em série com resistor de $2.0K\Omega$.\label{circuito_zener_direto_serie_resistor}](./Simulacoes/relatorio/2CC6-Circuito-zener_direto_serie_resistor_2k.png){width=50%}
 
 
-![Montagem do circuito com diodo zener no sentido direto em série com resistor de $2.0K\Omega$.\label{circuito_zener_direto_serie_resistor_exp}](./Experimento_imagens/ex6-zener_direto_resistor/circuito-zener_resistor.jpeg){width=35%}
-
-
-\newpage
-
-
-![Gráfico do osciloscópio para o circuito com diodo zener no sentido direto em série com resistor de $2.0K\Omega$.\label{circuito_zener_direto_serie_resistor_grafico_exp}](./Experimento_imagens/ex6-zener_direto_resistor/grafico-zener_resistor.jpeg){width=30%}
-
-
-![Gráfico do circuito com diodo zener no sentido direto em série com resistor de $2.0K\Omega$, simulado computacionalmente.\label{circuito_zener_direto_serie_resistor_simulado}](./Simulacoes/relatorio/2CC6-grafico-zener_direto_serie_resistor_2k.png){width=50%}
+![Montagem do circuito com diodo Zener no sentido direto em série com resistor de $2.0K\Omega$.\label{circuito_zener_direto_serie_resistor_exp}](./Experimento_imagens/ex6-zener_direto_resistor/circuito-zener_resistor.jpeg){width=35%}
 
 
 \newpage
 
-### Diodo zener no sentido reverso em série com resistor
 
-  O sétimo experimento foi projetado com um diodo zener, no sentido da reverso, em série com um resistor de $2.0K\Omega$, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_zener_reverso_serie_resistor}. O circuito foi montado como apresentado na figura \ref{circuito_zener_reverso_serie_resistor_exp}. O resultado obtido pelo gráfico presente no osciloscópio é um segmento de reta onde o diodo zener atua como uma bateria quando na região ruptura onde $V_{ZK} \thickapprox -1.4V$ associado a uma resistencia, apresentando assim um segmento de reta caracterísco da equação de Ohm para resistores (modelo de retas, ou segmentos lineares) [@sedra2007microeletrônica] , figura \ref{circuito_zener_reverso_serie_resistor_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_zener_reverso_serie_resistor_simulado}.\
+![Gráfico do osciloscópio para o circuito com diodo Zener no sentido direto em série com resistor de $2.0K\Omega$.\label{circuito_zener_direto_serie_resistor_grafico_exp}](./Experimento_imagens/ex6-zener_direto_resistor/grafico-zener_resistor.jpeg){width=30%}
+
+
+![Gráfico do circuito com diodo Zener no sentido direto em série com resistor de $2.0K\Omega$, simulado computacionalmente.\label{circuito_zener_direto_serie_resistor_simulado}](./Simulacoes/relatorio/2CC6-grafico-zener_direto_serie_resistor_2k.png){width=50%}
+
+
+\newpage
+
+### Diodo Zener no sentido reverso em série com resistor
+
+  O sétimo experimento foi projetado com um diodo Zener, no sentido da reverso, em série com um resistor de $2.0K\Omega$, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_zener_reverso_serie_resistor}. O circuito foi montado como apresentado na figura \ref{circuito_zener_reverso_serie_resistor_exp}. O resultado obtido pelo gráfico presente no osciloscópio é um segmento de reta onde o diodo Zener atua como uma bateria quando na região ruptura onde $V_{ZK} \thickapprox -1.4V$ associado a uma resistencia, apresentando assim um segmento de reta caracterísco da equação de Ohm para resistores (modelo de retas, ou segmentos lineares) [@sedra2007microeletrônica] , figura \ref{circuito_zener_reverso_serie_resistor_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_zener_reverso_serie_resistor_simulado}.\
   Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![Circuito com diodo zener no sentido direto em série com resistor de $2.0K\Omega$.\label{circuito_zener_reverso_serie_resistor}](./Simulacoes/relatorio/2CC7-Circuito-zener_reverso_serie_resistor_2k.png){width=50%}
+![Circuito com diodo Zener no sentido direto em série com resistor de $2.0K\Omega$.\label{circuito_zener_reverso_serie_resistor}](./Simulacoes/relatorio/2CC7-Circuito-zener_reverso_serie_resistor_2k.png){width=50%}
 
 
-![Montagem do circuito com diodo zener no sentido reverso em série com resistor de $2.0K\Omega$.\label{circuito_zener_reverso_serie_resistor_exp}](./Experimento_imagens/ex7-zener_reverso_resistor/circuito-zener_reverso_resistor.jpeg){width=35%}
-
-
-\newpage
-
-
-![Gráfico do osciloscópio para o circuito com diodo zener no sentido reverso em série com resistor de $2.0K\Omega$.\label{circuito_zener_reverso_serie_resistor_grafico_exp}](./Experimento_imagens/ex7-zener_reverso_resistor/grafico-zener_reverso_resistor.jpeg){width=30%}
-
-
-![Gráfico do circuito com diodo zener no sentido reverso em série com resistor de $2.0K\Omega$, simulado computacionalmente.\label{circuito_zener_reverso_serie_resistor_simulado}](./Simulacoes/relatorio/2CC7-grafico-zener_reverso_serie_resistor_2k.png){width=50%}
+![Montagem do circuito com diodo Zener no sentido reverso em série com resistor de $2.0K\Omega$.\label{circuito_zener_reverso_serie_resistor_exp}](./Experimento_imagens/ex7-zener_reverso_resistor/circuito-zener_reverso_resistor.jpeg){width=35%}
 
 
 \newpage
 
-### Diodo no sentido direto em série com diodo zener no sentido direto
 
-  O oitavo experimento foi projetado com um diodo, no sentido direto, em série com um diodo zener, no sentido da direto, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto_serie_zener_direto}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_serie_zener_direto_exp}. O resultado obtido pelo gráfico presente no osciloscópio é a soma dos $V_K$, $V_K \thickapprox 1.4V$, figura \ref{circuito_diodo_direto_serie_zener_direto_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_serie_zener_direto_simulado}.\
+![Gráfico do osciloscópio para o circuito com diodo Zener no sentido reverso em série com resistor de $2.0K\Omega$.\label{circuito_zener_reverso_serie_resistor_grafico_exp}](./Experimento_imagens/ex7-zener_reverso_resistor/grafico-zener_reverso_resistor.jpeg){width=30%}
+
+
+![Gráfico do circuito com diodo Zener no sentido reverso em série com resistor de $2.0K\Omega$, simulado computacionalmente.\label{circuito_zener_reverso_serie_resistor_simulado}](./Simulacoes/relatorio/2CC7-grafico-zener_reverso_serie_resistor_2k.png){width=50%}
+
+
+\newpage
+
+### Diodo no sentido direto em série com diodo Zener no sentido direto
+
+  O oitavo experimento foi projetado com um diodo, no sentido direto, em série com um diodo Zener, no sentido da direto, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto_serie_zener_direto}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_serie_zener_direto_exp}. O resultado obtido pelo gráfico presente no osciloscópio é a soma dos $V_K$, $V_K \thickapprox 1.4V$, figura \ref{circuito_diodo_direto_serie_zener_direto_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_serie_zener_direto_simulado}.\
   Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![Circuito com diodo no sentido direto em série com diodo zener no sentido direto.\label{circuito_diodo_direto_serie_zener_direto}](./Simulacoes/relatorio/2CC8-diodo_direto_serie_zener_direto.png){width=50%}
+![Circuito com diodo no sentido direto em série com diodo Zener no sentido direto.\label{circuito_diodo_direto_serie_zener_direto}](./Simulacoes/relatorio/2CC8-diodo_direto_serie_zener_direto.png){width=50%}
 
 
-![Montagem do circuito com diodo no sentido direto em série com diodo zener no sentido direto.\label{circuito_diodo_direto_serie_zener_direto_exp}](./Experimento_imagens/ex8-diodo_direto_serie_zener_direto/circuito-diodo_direto_serie_zener_direto.jpeg){width=35%}
-
-
-\newpage
-
-
-![Gráfico do osciloscópio para o circuito com diodo no sentido direto em série com diodo zener no sentido direto.\label{circuito_diodo_direto_serie_zener_direto_grafico_exp}](./Experimento_imagens/ex8-diodo_direto_serie_zener_direto/grafico-diodo_direto_serie_zener_direto.jpeg){width=30%}
-
-
-![Gráfico do circuito com diodo no sentido direto em série com diodo zener no sentido direto, simulado computacionalmente.\label{circuito_diodo_direto_serie_zener_direto_simulado}](./Simulacoes/relatorio/2CC8-grafico-diodo_direto_serie_zener_direto.png){width=50%}
+![Montagem do circuito com diodo no sentido direto em série com diodo Zener no sentido direto.\label{circuito_diodo_direto_serie_zener_direto_exp}](./Experimento_imagens/ex8-diodo_direto_serie_zener_direto/circuito-diodo_direto_serie_zener_direto.jpeg){width=35%}
 
 
 \newpage
 
-### Diodo no sentido direto em série com diodo zener no sentido reverso
 
-  O nono experimento foi projetado com um diodo, no sentido direto, em série com um diodo zener, no sentido da reverso, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto_serie_zener_reverso}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_serie_zener_reverso_exp}. O resultado obtido pelo gráfico presente no osciloscópio é a soma do $V_K$ do diodo com o $V_{ZK}$ do diodo zener, $V_K \thickapprox 2.1V$, figura \ref{circuito_diodo_direto_serie_zener_reverso_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_serie_zener_reverso_simulado}.\
+![Gráfico do osciloscópio para o circuito com diodo no sentido direto em série com diodo Zener no sentido direto.\label{circuito_diodo_direto_serie_zener_direto_grafico_exp}](./Experimento_imagens/ex8-diodo_direto_serie_zener_direto/grafico-diodo_direto_serie_zener_direto.jpeg){width=30%}
+
+
+![Gráfico do circuito com diodo no sentido direto em série com diodo Zener no sentido direto, simulado computacionalmente.\label{circuito_diodo_direto_serie_zener_direto_simulado}](./Simulacoes/relatorio/2CC8-grafico-diodo_direto_serie_zener_direto.png){width=50%}
+
+
+\newpage
+
+### Diodo no sentido direto em série com diodo Zener no sentido reverso
+
+  O nono experimento foi projetado com um diodo, no sentido direto, em série com um diodo Zener, no sentido da reverso, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto_serie_zener_reverso}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_serie_zener_reverso_exp}. O resultado obtido pelo gráfico presente no osciloscópio é a soma do $V_K$ do diodo com o $V_{ZK}$ do diodo Zener, $V_K \thickapprox 2.1V$, figura \ref{circuito_diodo_direto_serie_zener_reverso_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_serie_zener_reverso_simulado}.\
   Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![Circuito com diodo no sentido direto em série com diodo zener no sentido reverso.\label{circuito_diodo_direto_serie_zener_reverso}](./Simulacoes/relatorio/2CC9-diodo_direto_serie_zener_reverso.png){width=50%}
+![Circuito com diodo no sentido direto em série com diodo Zener no sentido reverso.\label{circuito_diodo_direto_serie_zener_reverso}](./Simulacoes/relatorio/2CC9-diodo_direto_serie_zener_reverso.png){width=50%}
 
 
-![Montagem do circuito com diodo no sentido direto em série com diodo zener no sentido reverso.\label{circuito_diodo_direto_serie_zener_reverso_exp}](./Experimento_imagens/ex9-diodo_direto_serie_zener_reverso/circuito-diodo_direto_serie_zener_reverso.jpeg){width=35%}
-
-
-\newpage
-
-
-![Gráfico do osciloscópio para o circuito com diodo no sentido direto em série com diodo zener no sentido reverso.\label{circuito_diodo_direto_serie_zener_reverso_grafico_exp}](./Experimento_imagens/ex9-diodo_direto_serie_zener_reverso/grafico-diodo_direto_serie_zener_reverso.jpeg){width=30%}
-
-
-![Gráfico do circuito com diodo no sentido direto em série com diodo zener no sentido reverso, simulado computacionalmente.\label{circuito_diodo_direto_serie_zener_reverso_simulado}](./Simulacoes/relatorio/2CC9-grafico-diodo_direto_serie_zener_reverso.png){width=50%}
+![Montagem do circuito com diodo no sentido direto em série com diodo Zener no sentido reverso.\label{circuito_diodo_direto_serie_zener_reverso_exp}](./Experimento_imagens/ex9-diodo_direto_serie_zener_reverso/circuito-diodo_direto_serie_zener_reverso.jpeg){width=35%}
 
 
 \newpage
 
-### Diodo no sentido direto em paralelo com diodo zener no sentido direto
 
-  O décimo experimento foi projetado com um diodo, no sentido direto, em paralelo com um diodo zener, no sentido da direto, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto_paralelo_zener_direto}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_paralelo_zener_direto_exp}. O resultado obtido pelo gráfico presente no osciloscópio, figura \ref{circuito_diodo_direto_paralelo_zener_direto_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_paralelo_zener_direto_simulado}.\
+![Gráfico do osciloscópio para o circuito com diodo no sentido direto em série com diodo Zener no sentido reverso.\label{circuito_diodo_direto_serie_zener_reverso_grafico_exp}](./Experimento_imagens/ex9-diodo_direto_serie_zener_reverso/grafico-diodo_direto_serie_zener_reverso.jpeg){width=30%}
+
+
+![Gráfico do circuito com diodo no sentido direto em série com diodo Zener no sentido reverso, simulado computacionalmente.\label{circuito_diodo_direto_serie_zener_reverso_simulado}](./Simulacoes/relatorio/2CC9-grafico-diodo_direto_serie_zener_reverso.png){width=50%}
+
+
+\newpage
+
+### Diodo no sentido direto em paralelo com diodo Zener no sentido direto
+
+  O décimo experimento foi projetado com um diodo, no sentido direto, em paralelo com um diodo Zener, no sentido da direto, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto_paralelo_zener_direto}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_paralelo_zener_direto_exp}. O resultado obtido pelo gráfico presente no osciloscópio, figura \ref{circuito_diodo_direto_paralelo_zener_direto_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_paralelo_zener_direto_simulado}.\
   Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![Circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.\label{circuito_diodo_direto_paralelo_zener_direto}](./Simulacoes/relatorio/2CC10-diodo_direto_paralelo_zener_direto.png){width=50%}
+![Circuito com diodo no sentido direto em paralelo com diodo Zener no sentido direto.\label{circuito_diodo_direto_paralelo_zener_direto}](./Simulacoes/relatorio/2CC10-diodo_direto_paralelo_zener_direto.png){width=50%}
 
 
-![Montagem do circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.\label{circuito_diodo_direto_paralelo_zener_direto_exp}](./Experimento_imagens/ex10-diodo_direto_paralelo_zener_direto/circuito-diodo_direto_paralelo_zener_direto.jpeg){width=35%}
-
-
-\newpage
-
-
-![Gráfico do osciloscópio para o circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.\label{circuito_diodo_direto_paralelo_zener_direto_grafico_exp}](./Experimento_imagens/ex10-diodo_direto_paralelo_zener_direto/grafico-diodo_direto_paralelo_zener_direto.jpeg){width=30%}
-
-
-![Gráfico do circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto, simulado computacionalmente.\label{circuito_diodo_direto_paralelo_zener_direto_simulado}](./Simulacoes/relatorio/2CC10-grafico-diodo_direto_paralelo_zener_direto.png){width=50%}
+![Montagem do circuito com diodo no sentido direto em paralelo com diodo Zener no sentido direto.\label{circuito_diodo_direto_paralelo_zener_direto_exp}](./Experimento_imagens/ex10-diodo_direto_paralelo_zener_direto/circuito-diodo_direto_paralelo_zener_direto.jpeg){width=35%}
 
 
 \newpage
 
-### Diodo no sentido direto em paralelo com diodo zener no sentido reverso
 
-  O décimo primeiro experimento foi projetado com um diodo, no sentido direto, em paralelo com um diodo zener, no sentido da reverso, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto_paralelo_zener_reverso}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_paralelo_zener_reverso_exp}. O resultado obtido pelo gráfico presente no osciloscópio, figura \ref{circuito_diodo_direto_paralelo_zener_reverso_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_paralelo_zener_reverso_simulado}.\
+![Gráfico do osciloscópio para o circuito com diodo no sentido direto em paralelo com diodo Zener no sentido direto.\label{circuito_diodo_direto_paralelo_zener_direto_grafico_exp}](./Experimento_imagens/ex10-diodo_direto_paralelo_zener_direto/grafico-diodo_direto_paralelo_zener_direto.jpeg){width=30%}
+
+
+![Gráfico do circuito com diodo no sentido direto em paralelo com diodo Zener no sentido direto, simulado computacionalmente.\label{circuito_diodo_direto_paralelo_zener_direto_simulado}](./Simulacoes/relatorio/2CC10-grafico-diodo_direto_paralelo_zener_direto.png){width=50%}
+
+
+\newpage
+
+### Diodo no sentido direto em paralelo com diodo Zener no sentido reverso
+
+  O décimo primeiro experimento foi projetado com um diodo, no sentido direto, em paralelo com um diodo Zener, no sentido da reverso, esses dois dispositivos no lugar do dispositivo de teste, como pode ser observado pela figura \ref{circuito_diodo_direto_paralelo_zener_reverso}. O circuito foi montado como apresentado na figura \ref{circuito_diodo_direto_paralelo_zener_reverso_exp}. O resultado obtido pelo gráfico presente no osciloscópio, figura \ref{circuito_diodo_direto_paralelo_zener_reverso_grafico_exp}, e o resultado esperado é o simulado computacionalmente pela figura \ref{circuito_diodo_direto_paralelo_zener_reverso_simulado}.\
   Como pode ser observado, o gráfico obtido pelo osciloscópio e o simulado são semelhantes, mostrando que o experimento foi bem-sucedido.\
 
-![Circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.\label{circuito_diodo_direto_paralelo_zener_reverso}](./Simulacoes/relatorio/2CC11-diodo_direto_paralelo_zener_reverso.png){width=50%}
+![Circuito com diodo no sentido direto em paralelo com diodo Zener no sentido reverso.\label{circuito_diodo_direto_paralelo_zener_reverso}](./Simulacoes/relatorio/2CC11-diodo_direto_paralelo_zener_reverso.png){width=50%}
 
 
-![Montagem do circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.\label{circuito_diodo_direto_paralelo_zener_reverso_exp}](./Experimento_imagens/ex11-diodo_direto_paralelo_zener_reverso/circuito-diodo_direto_paralelo_zener_reverso.jpeg){width=35%}
+![Montagem do circuito com diodo no sentido direto em paralelo com diodo Zener no sentido reverso.\label{circuito_diodo_direto_paralelo_zener_reverso_exp}](./Experimento_imagens/ex11-diodo_direto_paralelo_zener_reverso/circuito-diodo_direto_paralelo_zener_reverso.jpeg){width=35%}
 
 
 \newpage
 
 
-![Gráfico do osciloscópio para o circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.\label{circuito_diodo_direto_paralelo_zener_reverso_grafico_exp}](./Experimento_imagens/ex11-diodo_direto_paralelo_zener_reverso/grafico-diodo_direto_paralelo_zener_reverso.jpeg){width=30%}
+![Gráfico do osciloscópio para o circuito com diodo no sentido direto em paralelo com diodo Zener no sentido reverso.\label{circuito_diodo_direto_paralelo_zener_reverso_grafico_exp}](./Experimento_imagens/ex11-diodo_direto_paralelo_zener_reverso/grafico-diodo_direto_paralelo_zener_reverso.jpeg){width=30%}
 
 
-![Gráfico do circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso, simulado computacionalmente.\label{circuito_diodo_direto_paralelo_zener_reverso_simulado}](./Simulacoes/relatorio/2CC11-grafico-diodo_direto_paralelo_zener_reverso.png){width=50%}
+![Gráfico do circuito com diodo no sentido direto em paralelo com diodo Zener no sentido reverso, simulado computacionalmente.\label{circuito_diodo_direto_paralelo_zener_reverso_simulado}](./Simulacoes/relatorio/2CC11-grafico-diodo_direto_paralelo_zener_reverso.png){width=50%}
 
 
 
