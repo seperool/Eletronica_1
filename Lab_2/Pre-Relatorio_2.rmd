@@ -1,0 +1,246 @@
+---
+title: "PRÉ-RELATÓRIO DE ELETRÔNICA 1"
+subtitle: "Laboratório 2"
+author:
+  - Franciellen Thurler Freire Allemão
+  - Sergio Pedro Rodrigues Oliveira
+  - Victor Hugo Queiroz
+date: "`r format(Sys.time(), '%d %B %Y')`"
+#lof: true #adiciona lista de figuras
+#lot: true #adiciona lista de tabelas
+#toc-title: SUMÁRIO #nome do sumário
+output:
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
+header-includes:
+  - \usepackage{titling}
+  - \pretitle{\begin{center}
+    \includegraphics{./RMarkdown/azul.png}\LARGE\\}
+  - \posttitle{\end{center}}
+  - \renewcommand{\and}{\\}
+bibliography: RMarkdown/bibliografia_eletronica1.bib
+csl: RMarkdown/abnt.csl
+---
+
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{roman}
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\contentsname}{SUMÁRIO}
+\tableofcontents
+```
+
+\newpage
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\listfigurename}{LISTA DE FIGURAS}
+\listoffigures
+```
+
+```{r Pacotes, message=FALSE, warning=FALSE, echo=FALSE}
+library(knitr)
+library(rmarkdown)
+library(readr)
+library(tibble)
+library(magrittr)
+library(dplyr)
+library(tidyr)
+library(data.table)
+library(janitor)
+```
+
+\newpage
+
+# OBJETIVO
+
+- Implementar um traçador de curvas $V \times I$ para dispositivos de 2 terminais.
+- Obter as curvas caraterísticas de vários tipos de componentes, com especial ênfase em diodos.
+
+\pagenumbering{arabic}
+\newpage
+
+# PREPARATÓRIO
+
+Como preparatório para o experimento foi necessário responder as questões $2.a$, $2.b$ e $2.c$.\
+
+## Questão 2.a
+- O traçador de curvas $V \times I$ é um circuito que permite medir e plotar a relação entre a tensão e a corrente de um dispositivo de teste. O circuito é composto pelos seguintes elementos:\
+  - Transformador:\
+  O transformador é responsável por gerar um sinal de tensão de amplitude constante, independente da carga conectada ao dispositivo de teste.\
+  - Resistência:\
+  A resistência é utilizada para limitar a corrente que flui pelo dispositivo de teste.\
+  - Dispositivo de teste:\
+  O dispositivo de teste é o componente que se deseja medir a relação entre a tensão e a corrente.\
+  - CH1 e CH2:\
+  Os canais CH1 e CH2 são responsáveis por medir as tensões nos terminais do dispositivo de teste.\
+
+- O funcionamento do traçador de curvas $V \times I$ é o seguinte:\
+  - O sinal de tensão do transformador é aplicado ao dispositivo de teste.\
+  - A corrente que flui pelo dispositivo de teste é medida pela resistência.\
+  - As tensões CH1 e CH2 são medidas nos terminais do dispositivo de teste.\
+  - As tensões CH1 e CH2 são plotadas em um gráfico, com a tensão CH1 no eixo X e a tensão CH2 no eixo Y.\
+
+- Se fosse possível plotar as tensões CH1 e CH2 em um gráfico, a relação entre a tensão “V” e a corrente “I” seria a seguinte:\
+  - Tensão CH1: A tensão CH1 é proporcional à tensão “V” aplicada ao dispositivo de teste.\
+  - Tensão CH2: A tensão CH2 é proporcional à corrente “I” que flui pelo dispositivo de teste.\
+  - Portanto, o gráfico seria uma reta que passa pela origem, com uma inclinação igual à relação entre a tensão “V” e a corrente “I”.\
+
+\newpage
+
+## Questão 2.b
+
+Sabendo que a máxima potência que pode dissipar a resistência $R_T$ é $0.25W$, projete $R_T$ para não ser danificado quando o dispositivo de teste é um curto-circuito.
+
+Dado que a tensão foi dada em $V_{RMS}$, podemos passar ela para a amplitude:\
+
+\begin{equation}
+  V_{RMS} = \frac{V_{Amplitude}}{\sqrt{2}}
+\end{equation}
+
+logo,\
+\begin{equation}
+  V_{Amplitude} = 15 \times \sqrt{2}
+\end{equation}
+
+\begin{equation}
+  V_{Amplitude} = 21.21V
+\end{equation}
+
+Com o valor de $V_{Amplitude}$ e a potência dissipada, podemos descobrir a resistência.[@johnson2015fundamentos]\
+
+\begin{equation}
+  P = \frac{V^2}{R}
+\end{equation}
+
+\begin{equation}
+  R_T = \frac{(21.21)^2}{0.25}
+\end{equation}
+
+Assim descobrimos que o valor de $R_T = 1.8k\Omega$, porém para proteger os dispositivos do circuito é necessario escolher o valor próximo acima do projetado teoricamente na série de resistores E12, este sendo $2.2k\Omega$.\
+
+\newpage
+
+## Questão 2.c
+
+Para cada dispositivo de teste da seguinte lista, esboce a curva $V \times I$ esperada.\
+
+### Questão 2.c1 - Circuito aberto
+
+![Circuito aberto.](./Simulacoes/2CC1-circuito_aberto-circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito aberto.](./Simulacoes/2CC1-circuito_aberto.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c2 - Curto-circuito
+
+![Curto-circuito.](./Simulacoes/2CC2-curto-circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do curto-circuito.](./Simulacoes/2CC2-curto.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c3 - Resistor
+
+![Circuito com resistores da série E12.](./Simulacoes/2CC3-Resitores_E12-circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com resistores da série E12.](./Simulacoes/2CC3-Resitores_E12.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c4 - Diodo no sentido direto
+
+![Circuito com diodo no sentido direto.](./Simulacoes/2CC4-diodo_silicio_circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com diodo no sentido direto.](./Simulacoes/2CC4-diodo_silicio.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c5 - Diodo zener no sentido direto
+
+![Circuito com diodo zener no sentido direto.](./Simulacoes/2CC5-diodo_zener_sentido_direto_circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com diodo zener no sentido direto.](./Simulacoes/2CC5-diodo_zener_sentido_direto.jpg){width=80%}
+
+
+\newpage
+### Questão 2.c6 - Diodo zener no sentido direto em serie com resistor
+
+![Circuito com diodo zener no sentido direto em serie com resistor.](./Simulacoes/2CC6-diodo_zener_sentido_direto_e_resistor-circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com diodo zener no sentido direto em serie com resistor.](./Simulacoes/2CC6-diodo_zener_sentido_direto_e_resistor.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c7 - Diodo zener no sentido reverso em serie com resistor
+
+![Circuito com diodo zener no sentido reverso em serie com resistor.](./Simulacoes/2CC7-diodo_zener_sentido_reverso_e_resistor-cirtuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com diodo zener no sentido reverso em serie com resistor.](./Simulacoes/2CC7-diodo_zener_sentido_reverso_e_resistor.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c8 - Diodo no sentido direto em serie com diodo zener no sentido direto
+
+![Circuito com diodo no sentido direto em serie com diodo zener no sentido direto.](./Simulacoes/2CC8-diodo_e_zener_sentido_direto-circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com diodo no sentido direto em serie com diodo zener no sentido direto.](./Simulacoes/2CC8-diodo_e_zener_sentido_direto.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c9 - Diodo no sentido direto em serie com diodo zener no sentido reverso
+
+![Circuito com diodo no sentido direto em serie com diodo zener no sentido reverso.](./Simulacoes/2CC9-diodo_sentido_direto_e_zener_sentido_reverso-circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com diodo no sentido direto em serie com diodo zener no sentido reverso.](./Simulacoes/2CC9-diodo_sentido_direto_e_zener_sentido_reverso.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c10 - Diodo no sentido direto em paralelo com diodo zener no sentido direto
+
+![Circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.](./Simulacoes/2CC10-diodo_sentido_direto_e_zener_sentido_direto-circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com diodo no sentido direto em paralelo com diodo zener no sentido direto.](./Simulacoes/2CC10-diodo_sentido_direto_e_zener_sentido_direto.jpg){width=80%}
+
+
+\newpage
+
+### Questão 2.c11 - Diodo no sentido direto em paralelo com diodo zener no sentido reverso
+
+![Circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.](./Simulacoes/2CC11-diodo_sentido_direto_e_zener_sentido_reverso-circuito.jpg){width=80%}
+
+
+![Curva $V \times I$ do circuito com diodo no sentido direto em paralelo com diodo zener no sentido reverso.](./Simulacoes/2CC11-diodo_sentido_direto_e_zener_sentido_reverso.jpg){width=80%}
+
+
+\newpage
+
+# BIBLIOGRAFIA
