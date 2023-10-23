@@ -48,3 +48,4 @@ Repositório destinado a criação e armazenamento de relatórios de Eletrônica
 # Laboratórios
 
 1. Experimento 1: Traçador de Curvas $V \times I$.\
+2. Experimento 2: Retificadores de Meia Onda.\
