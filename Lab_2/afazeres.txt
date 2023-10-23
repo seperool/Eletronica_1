@@ -7,5 +7,18 @@ Subir github:
 Estudar:
 
 Afazeres:
-	- Pré-relatório 
-		- Preparar arquivo rmd
+	- Pré-relatório
+		- Objetivo
+		- Simulações LTSpice
+			- Sem capacitor
+				- RL = 4.7KOhm
+				- RL = 47KOhm
+			- Com capacitor
+				- RL = 4.7KOhm
+				- RL = 47KOhm
+		- Cálculo
+			- Converter rms (?)
+			- Valor médio tensão de saida
+			- Potência maxima dissipada pelos resistores
+		- Pesquisa
+			- Tensão de pico inversa (PIV) diodo 1N4148

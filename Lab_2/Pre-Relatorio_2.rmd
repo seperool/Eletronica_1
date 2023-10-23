@@ -1,6 +1,6 @@
 ---
 title: "PRÉ-RELATÓRIO DE ELETRÔNICA 1"
-subtitle: "Laboratório 2"
+subtitle: "Laboratório 2 - Retificadores de Meia Onda"
 author:
   - Franciellen Thurler Freire Allemão
   - Sergio Pedro Rodrigues Oliveira
