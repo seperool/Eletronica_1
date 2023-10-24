@@ -10,14 +10,14 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
 header-includes:
   - \usepackage{titling}
   - \pretitle{\begin{center}
@@ -63,8 +63,7 @@ library(janitor)
 
 # OBJETIVO
 
-- Implementar um traçador de curvas $V \times I$ para dispositivos de 2 terminais.
-- Obter as curvas caraterísticas de vários tipos de componentes, com especial ênfase em diodos.
+Familiarizar-se com as aplicações básicas dos diodos de junção. Especificamente implementar e obter resultados experimentais do retificador de meia onda com e sem capacitor de saída.\
 
 \pagenumbering{arabic}
 \newpage
