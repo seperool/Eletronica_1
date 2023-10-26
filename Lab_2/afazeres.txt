@@ -1,6 +1,6 @@
-ESCRITO EM 24/10/23
+ESCRITO EM 26/10/23
 ---
-PARA 25/10/23
+PARA 27/10/23
 ---
 Subir github:
 
@@ -19,5 +19,3 @@ Afazeres:
 			- Converter rms (?)
 			- Valor médio tensão de saida
 			- Potência maxima dissipada pelos resistores
-		- Pesquisa
-			- Tensão de pico inversa (PIV) diodo 1N4148
