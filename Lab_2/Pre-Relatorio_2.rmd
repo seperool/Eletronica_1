@@ -6,13 +6,13 @@ author:
 - Victor Hugo Queiroz
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  odt_document:
-    number_sections: yes
   pdf_document:
     number_sections: yes
     toc: no
   word_document:
     toc: yes
+    number_sections: yes
+  odt_document:
     number_sections: yes
   html_document:
     toc: yes
@@ -72,10 +72,14 @@ Familiarizar-se com as aplicações básicas dos diodos de junção. Especificam
 ## Retificador de meia onda sem capacitor na saída
 i. Tensões de entrada e saída comparar com as simulações.\
 ii. Cálculo da tensão média na saída.\
-iii. Cálculo da potência média de deverá dissipar a resistencia da saída nos casos:\
+iii. Cálculo da potência média de deverá dissipar a resistência da saída nos casos:\
   1. $R_L = 4.7k\Omega$\
   2. $R_L = 47k\Omega$\
 iv. Qual é a tensão de pico inversa (PIV) suportada pelo diodo 1N4148, indicada pelo fabricante?\
+
+A tensão de pico inversa do diodo (PIV ou PRV - Peak Reverse Voltage) é de grande importância nos projetos de retificação. Esta é a tensão máxima nominal do diodo que não deve ser ultrapassada na região de polarização reversa.\
+
+Segundo o fabricante (Anexo 1) a tensão de pico inversa (PIV ou PRV) do diodo 1N4148 é de $100V$.\
 
 \newpage
 
