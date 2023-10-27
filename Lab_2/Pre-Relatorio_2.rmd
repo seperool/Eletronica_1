@@ -9,10 +9,10 @@ output:
   pdf_document:
     number_sections: yes
     toc: no
+  odt_document:
+    number_sections: yes
   word_document:
     toc: yes
-    number_sections: yes
-  odt_document:
     number_sections: yes
   html_document:
     toc: yes
@@ -71,7 +71,37 @@ Familiarizar-se com as aplicações básicas dos diodos de junção. Especificam
 
 ## Retificador de meia onda sem capacitor na saída
 i. Tensões de entrada e saída comparar com as simulações.\
+
+![Circuito com resistor($R_L$) de $47K$.](./Simulacoes/2_a-circuito-47k.png){width=80%}
+
+
+![Gráfico da tensão de entrada e saída do circuito com resistor($R_L$) de $47K$.](./Simulacoes/2_a-grafico-tensao-47k.png){width=80%}
+
+
+\newpage
+
+![Circuito com resistor($R_L$) de $4,7K$.](./Simulacoes/2_a-circuito-4_7k.png){width=80%}
+
+
+![Gráfico da tensão de entrada e saída do circuito com resistor($R_L$) de $4,7K$.](./Simulacoes/2_a-grafico-tensao-4_7k.png){width=80%}
+
+
+\newpage
+
 ii. Cálculo da tensão média na saída.\
+
+\begin{equation}
+  V_{Méd} = (V_M - V_K) \cdot (0,318)
+\end{equation}
+
+\begin{equation}
+  V_{Méd} = (21,21 - 0,70) \cdot (0,318)
+\end{equation}
+
+\begin{equation}
+  V_{Méd} = 6,52V
+\end{equation}
+
 iii. Cálculo da potência média de deverá dissipar a resistência da saída nos casos:\
   1. $R_L = 4.7k\Omega$\
   2. $R_L = 47k\Omega$\
