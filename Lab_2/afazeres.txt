@@ -1,6 +1,6 @@
-ESCRITO EM 26/10/23
+ESCRITO EM 27/10/23
 ---
-PARA 27/10/23
+PARA 28/10/23
 ---
 Subir github:
 
@@ -9,7 +9,7 @@ Estudar:
 Afazeres:
 	- Pré-relatório
 		- Simulações LTSpice
-			- Sem capacitor
+			- Sem capacitor (melhorar imagens, menos ciclos)
 				- RL = 4.7KOhm
 				- RL = 47KOhm
 			- Com capacitor
