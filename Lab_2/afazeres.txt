@@ -1,6 +1,6 @@
-ESCRITO EM 27/10/23
+ESCRITO EM 29/10/23
 ---
-PARA 28/10/23
+PARA 30/10/23
 ---
 Subir github:
 
@@ -8,14 +8,4 @@ Estudar:
 
 Afazeres:
 	- Pré-relatório
-		- Simulações LTSpice
-			- Sem capacitor (melhorar imagens, menos ciclos)
-				- RL = 4.7KOhm
-				- RL = 47KOhm
-			- Com capacitor
-				- RL = 4.7KOhm
-				- RL = 47KOhm
-		- Cálculo
-			- Converter rms (?)
-			- Valor médio tensão de saida
-			- Potência maxima dissipada pelos resistores
+		- Revisão
