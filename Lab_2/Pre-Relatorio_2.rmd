@@ -6,14 +6,14 @@ author:
 - Victor Hugo Queiroz
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document:
-    number_sections: yes
-    toc: no
   odt_document:
     number_sections: yes
   word_document:
     toc: yes
     number_sections: yes
+  pdf_document:
+    number_sections: yes
+    toc: no
   html_document:
     toc: yes
     df_print: paged
@@ -46,6 +46,14 @@ csl: RMarkdown/abnt.csl
 \listoffigures
 ```
 
+\newpage
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\listtablename}{LISTA DE TABELAS}
+\listoftables
+```
+
 ```{r Pacotes, message=FALSE, warning=FALSE, echo=FALSE}
 library(knitr)
 library(rmarkdown)
@@ -70,7 +78,9 @@ Familiarizar-se com as aplicações básicas dos diodos de junção. Especificam
 # PREPARATÓRIO
 
 ## Retificador de meia onda sem capacitor na saída
-i. Tensões de entrada e saída comparar com as simulações.\
+### Tensões de entrada e saída - simulações.\
+
+- $R_L = 47K\Omega$\
 
 ![Circuito com resistor($R_L$) de $47K$.](./Simulacoes/2_a-circuito-47k.png){width=80%}
 
@@ -80,15 +90,17 @@ i. Tensões de entrada e saída comparar com as simulações.\
 
 \newpage
 
-![Circuito com resistor($R_L$) de $4,7K$.](./Simulacoes/2_a-circuito-4_7k.png){width=80%}
+- $R_L = 4.7K\Omega$\
+
+![Circuito com resistor($R_L$) de $4.7K$.](./Simulacoes/2_a-circuito-4_7k.png){width=80%}
 
 
-![Gráfico da tensão de entrada e saída do circuito com resistor($R_L$) de $4,7K$.](./Simulacoes/2_a-grafico-tensao-4_7k.png){width=80%}
+![Gráfico da tensão de entrada e saída do circuito com resistor($R_L$) de $4.7K$.](./Simulacoes/2_a-grafico-tensao-4_7k.png){width=80%}
 
 
 \newpage
 
-ii. Cálculo da tensão média na saída.\
+### Cálculo da tensão média($V_{Méd}$) na saída
 
 \begin{equation}
   V_{Méd} = (V_M - V_K) \cdot (0,318)
@@ -102,10 +114,33 @@ ii. Cálculo da tensão média na saída.\
   V_{Méd} = 6,52V
 \end{equation}
 
-iii. Cálculo da potência média de deverá dissipar a resistência da saída nos casos:\
+### Cálculo da potência média ($P_{Méd}$) que a resistência da saída deverá dissipar nos casos
   1. $R_L = 4.7k\Omega$\
   2. $R_L = 47k\Omega$\
-iv. Qual é a tensão de pico inversa (PIV) suportada pelo diodo 1N4148, indicada pelo fabricante?\
+- Fórmula da potência média:\
+
+\begin{equation}
+  P_{Méd} = \frac{(V_m - V_k)^2} {2 \cdot R}
+\end{equation}
+
+Para os cálculos foi usado $V_k \thickapprox 0.7V$.\
+
+Logo,\
+```{r tb_Potencia_media, echo=FALSE, message=FALSE, warning=FALSE}
+#data.frame
+valor_res <- c(4.70,47.00)
+pot_med <- c(44.70,4.47)
+dt_pot_med <- data.frame(valor_res,pot_med)
+
+#Tabela
+kable(dt_pot_med,
+      digits = 2,
+      col.names = c("Resistências(K Ohm)", "Potência média (mW)"), 
+      align = "cc", 
+      caption = "Valor da potência média para cada resistência.")
+```
+
+### Qual é a tensão de pico inversa (PIV) suportada pelo diodo 1N4148, indicada pelo fabricante?
 
 A tensão de pico inversa do diodo (PIV ou PRV - Peak Reverse Voltage) é de grande importância nos projetos de retificação. Esta é a tensão máxima nominal do diodo que não deve ser ultrapassada na região de polarização reversa.\
 
@@ -115,11 +150,79 @@ Segundo o fabricante (Anexo 1) a tensão de pico inversa (PIV ou PRV) do diodo 1
 
 ## Retificador de meia onda com capacitor na saída
 
-i. Pesquisar como aproximar e calcular o valor de tensão pico-a-pico da ondulação (*Ripple*), em função de:\
+### Pesquisa da tensão de pico-a-pico da ondulação (*Ripple*)
+- Pesquisar como aproximar e calcular o valor de tensão pico-a-pico da ondulação (*Ripple*), em função de\
   - Tensão de pico de entrada ($V_m$);\
   - Resistencia de saída($R_L$);\
   - Capacitor de saída($C_L$).\
-ii. Cálculo o valor númerico da ondulação de pico-a-pico, nos casos $R_L = 4.7k\Omega$ e $R_L = 47k\Omega$. Comparar com os valores simulados no *LTSpice*.\
+
+\begin{equation}
+  V_{rpp} = \frac{V_m}{f \cdot C_L \cdot R_L}
+\end{equation}
+
+Dado que,\
+
+\begin{equation}
+  V_m = V_{rms} \cdot \sqrt{2}
+\end{equation}
+
+logo,\
+$V_m = 21.21 V$;\
+$f = 60 H_Z$;\
+$C_L = 4.7\mu F$.\
+
+### Cálculo do valor númerico da ondulação de pico-a-pico, nos casos $R_L = 4.7k\Omega$ e $R_L = 47k\Omega$ e comparação com os valores simulados no *LTSpice*
+
+```{r tb_valores_simulados, echo=FALSE, message=FALSE, warning=FALSE}
+#data.frame
+valor_res <- c(4.7,47)
+v_min <- c(11.05,19.24)
+v_max <- c(20.53,20.60)
+tb_val_sim <- data.frame(valor_res,v_min,v_max)
+
+#Tabela
+kable(tb_val_sim,
+      col.names = c("Resistências (k Ohm)", "Tensão mínima (V)", "Tensão máxima (V)"),
+      align = "ccc",
+      caption = "Valores da tensão de ondulação encontradas pela simulação no *LTSpice*.")
+```
+
+```{r tb_teorico_simulado_vrpp, echo=FALSE, message=FALSE, warning=FALSE}
+#data.frame
+valor_res <- c(4.7,47)
+teorico_vrpp <- c(16,1.6)
+simul_vrpp <- c(9.48,1.36)
+dt_teo_sim_vrpp <- data.frame(valor_res,teorico_vrpp,simul_vrpp)
+
+#Tabela
+kable(dt_teo_sim_vrpp,
+      digits = 2,
+      col.names = c("Resistências (k Ohm)", "Vrpp Teórico (V)", "Vrpp Simulado (V)"), 
+      align = "ccc", 
+      caption = "Comparando valores teóricos de Vrpp com valores encontados na simulação do *LTSpice* para o Vrpp.")
+```
+
+\newpage
+### Simulações do LTSpice
+- $R_L = 4.7K\Omega$
+
+
+
+![Circuito retificador de meia onda com $R_L = 4.7K$ e com capacitor de saída.](~/Programacao/eletronica_1/Lab_2/Simulacoes/2_b-circuito_cap-4_7k.png){width=80%}
+
+
+![Simulação no *LTSpice* das tensões de entrada e saída do retificador de meia onda com $R_L = 4.7K$ e com capacitor de saída.](~/Programacao/eletronica_1/Lab_2/Simulacoes/2_b-grafico_cap-tensao-4_7k.png){width=80%}
+
+
+\newpage
+- $R_L = 47K\Omega$
+
+
+![Circuito retificador de meia onda com $R_L = 47K$ e com capacitor de saída.](~/Programacao/eletronica_1/Lab_2/Simulacoes/2_b-circuito_cap-47k.png){width=80%}
+
+
+![Simulação no *LTSpice* das tensões de entrada e saída do retificador de meia onda com $R_L = 47K$ e com capacitor de saída.](~/Programacao/eletronica_1/Lab_2/Simulacoes/2_b-grafico_cap-tensao-47k.png){width=80%}
+
 
 \newpage
 
