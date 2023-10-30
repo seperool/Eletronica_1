@@ -8,12 +8,12 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   odt_document:
     number_sections: yes
-  word_document:
-    toc: yes
-    number_sections: yes
   pdf_document:
     number_sections: yes
     toc: no
+  word_document:
+    toc: yes
+    number_sections: yes
   html_document:
     toc: yes
     df_print: paged
@@ -144,7 +144,7 @@ kable(dt_pot_med,
 
 A tensão de pico inversa do diodo (PIV ou PRV - Peak Reverse Voltage) é de grande importância nos projetos de retificação. Esta é a tensão máxima nominal do diodo que não deve ser ultrapassada na região de polarização reversa.\
 
-Segundo o fabricante (Anexo 1) a tensão de pico inversa (PIV ou PRV) do diodo 1N4148 é de $100V$.\
+Segundo o fabricante (Anexo) a tensão de pico inversa (PIV ou PRV) do diodo 1N4148 é de $100V$.\
 
 \newpage
 
@@ -165,9 +165,10 @@ Segundo o fabricante (Anexo 1) a tensão de pico inversa (PIV ou PRV) do diodo 1
 ### Cálculo do valor númerico da ondulação de pico-a-pico, nos casos $R_L = 4.7k\Omega$ e $R_L = 47k\Omega$ e comparação com os valores simulados no *LTSpice*
 
 Para resolver a equação 5, foi necessário calcular a tensão de pico (equação 6) e usar os dados fornecidos pelo experimento.\
-A tabela 2 apresenta os valores da tensão de ondulação máxima e mínima, obtidos através da simulação.\
+A tabela 2 apresenta os valores da tensão de ondulação mínima e máxima, obtidos através da simulação.\
 Os resultados da aplicação da equação 5 estão apresentados na tabela 3.\
 
+- Cálculo da tensão de pico:\
 \begin{equation}
   V_m = V_{rms} \cdot \sqrt{2}
 \end{equation}
@@ -176,11 +177,13 @@ Os resultados da aplicação da equação 5 estão apresentados na tabela 3.\
   V_m = 21.21 V
 \end{equation}
 
-Dados fornecidos pelo experimento:\
+- Dados fornecidos pelo experimento:\
 $f = 60 H_Z$;\
 $C_L = 4.7\mu F$.\
 
+\newpage
 
+- tensão de ondulação mínima e máxima:\
 ```{r tb_valores_simulados, echo=FALSE, message=FALSE, warning=FALSE}
 #data.frame
 valor_res <- c(4.7,47)
@@ -194,6 +197,8 @@ kable(tb_val_sim,
       align = "ccc",
       caption = "Valores da tensão de ondulação encontradas pela simulação no *LTSpice*.")
 ```
+
+- Tensão de pico-a-pico da ondulação (teórico e simulado):\
 
 ```{r tb_teorico_simulado_vrpp, echo=FALSE, message=FALSE, warning=FALSE}
 #data.frame
