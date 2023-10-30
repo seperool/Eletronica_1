@@ -82,25 +82,25 @@ Familiarizar-se com as aplicações básicas dos diodos de junção. Especificam
 
 - $R_L = 47K\Omega$\
 
-![Circuito com resistor($R_L$) de $47K$.](./Simulacoes/2_a-circuito-47k.png){width=80%}
+![Circuito com resistor ($R_L$) de $47K$.](./Simulacoes/2_a-circuito-47k.png){width=80%}
 
 
-![Gráfico da tensão de entrada e saída do circuito com resistor($R_L$) de $47K$.](./Simulacoes/2_a-grafico-tensao-47k.png){width=80%}
+![Gráfico da tensão de entrada e saída do circuito com resistor ($R_L$) de $47K$.](./Simulacoes/2_a-grafico-tensao-47k.png){width=80%}
 
 
 \newpage
 
 - $R_L = 4.7K\Omega$\
 
-![Circuito com resistor($R_L$) de $4.7K$.](./Simulacoes/2_a-circuito-4_7k.png){width=80%}
+![Circuito com resistor ($R_L$) de $4.7K$.](./Simulacoes/2_a-circuito-4_7k.png){width=80%}
 
 
-![Gráfico da tensão de entrada e saída do circuito com resistor($R_L$) de $4.7K$.](./Simulacoes/2_a-grafico-tensao-4_7k.png){width=80%}
+![Gráfico da tensão de entrada e saída do circuito com resistor ($R_L$) de $4.7K$.](./Simulacoes/2_a-grafico-tensao-4_7k.png){width=80%}
 
 
 \newpage
 
-### Cálculo da tensão média($V_{Méd}$) na saída
+### Cálculo da tensão média ($V_{Méd}$) na saída
 
 \begin{equation}
   V_{Méd} = (V_M - V_K) \cdot (0,318)
@@ -140,7 +140,7 @@ kable(dt_pot_med,
       caption = "Valor da potência média para cada resistência.")
 ```
 
-### Qual é a tensão de pico inversa (PIV) suportada pelo diodo 1N4148, indicada pelo fabricante?
+### A tensão de pico inversa (PIV) suportada pelo diodo 1N4148 (indicada pelo fabricante)
 
 A tensão de pico inversa do diodo (PIV ou PRV - Peak Reverse Voltage) é de grande importância nos projetos de retificação. Esta é a tensão máxima nominal do diodo que não deve ser ultrapassada na região de polarização reversa.\
 
@@ -151,27 +151,35 @@ Segundo o fabricante (Anexo 1) a tensão de pico inversa (PIV ou PRV) do diodo 1
 ## Retificador de meia onda com capacitor na saída
 
 ### Pesquisa da tensão de pico-a-pico da ondulação (*Ripple*)
-- Pesquisar como aproximar e calcular o valor de tensão pico-a-pico da ondulação (*Ripple*), em função de\
+- Pesquisar como aproximar e calcular o valor de tensão pico-a-pico da ondulação (*Ripple*), em função de três variáveis:\
   - Tensão de pico de entrada ($V_m$);\
-  - Resistencia de saída($R_L$);\
+  - Resistência de saída($R_L$);\
   - Capacitor de saída($C_L$).\
+
+- Foi encontrado a equação 5, que satisfaz a pesquisa proposta:\
 
 \begin{equation}
   V_{rpp} = \frac{V_m}{f \cdot C_L \cdot R_L}
 \end{equation}
 
-Dado que,\
+### Cálculo do valor númerico da ondulação de pico-a-pico, nos casos $R_L = 4.7k\Omega$ e $R_L = 47k\Omega$ e comparação com os valores simulados no *LTSpice*
+
+Para resolver a equação 5, foi necessário calcular a tensão de pico (equação 6) e usar os dados fornecidos pelo experimento.\
+A tabela 2 apresenta os valores da tensão de ondulação máxima e mínima, obtidos através da simulação.\
+Os resultados da aplicação da equação 5 estão apresentados na tabela 3.\
 
 \begin{equation}
   V_m = V_{rms} \cdot \sqrt{2}
 \end{equation}
 
-logo,\
-$V_m = 21.21 V$;\
+\begin{equation}
+  V_m = 21.21 V
+\end{equation}
+
+Dados fornecidos pelo experimento:\
 $f = 60 H_Z$;\
 $C_L = 4.7\mu F$.\
 
-### Cálculo do valor númerico da ondulação de pico-a-pico, nos casos $R_L = 4.7k\Omega$ e $R_L = 47k\Omega$ e comparação com os valores simulados no *LTSpice*
 
 ```{r tb_valores_simulados, echo=FALSE, message=FALSE, warning=FALSE}
 #data.frame
