@@ -1,8 +1,7 @@
 ---
 title: "RELATÓRIO DE ELETRÔNICA 1"
-subtitle: "Experimento 1: Traçador de Curvas V x I"
+subtitle: "Laboratório 2 - Retificadores de Meia Onda"
 author:
-- Eduardo Kalleb
 - Franciellen Thurler Freire Allemão
 - Sergio Pedro Rodrigues Oliveira
 - Victor Hugo Queiroz
@@ -101,8 +100,7 @@ Ao polarizar um diodo Zener com uma tensão reversa igual a $V_{ZK}$ há o rompi
 
 # OBJETIVO
 
-- Implementar um traçador de curvas $V \times I$ para dispositivos de 2 terminais.\
-- Obter as curvas caraterísticas de vários tipos de componentes, com especial ênfase em diodos.\
+Familiarizar-se com as aplicações básicas dos diodos de junção. Especificamente implementar e obter resultados experimentais do retificador de meia onda com e sem capacitor de saída.\
 
 \newpage
 
@@ -111,16 +109,17 @@ Ao polarizar um diodo Zener com uma tensão reversa igual a $V_{ZK}$ há o rompi
 ```{r Lista de materiais, echo=FALSE, message=FALSE, warning=FALSE}
 
 #data.frame
-Materiais <- c("Fonte de tensão de 15 Voltz",
+Materiais <- c("Fonte de tensão eficaz de 15 Voltz",
                "Osciloscópio",
                "Multímetro de bancada",
                "Jumpers",
                "Protoboard",
-               "Resistências de 2K Ohm",
-               "Diodo de silício",
-               "Diodo Zener",
+               "Diodo 1N4148",
+               "Resistência de 47K Ohm",
+               "Resistência de 4.7K Ohm",
+               "Capacitor 4.7uF",
                "*Software* de simulação de circuitos eletrônicos: LTSpice")
-QTD <- c(1,1,1,4,1,2,1,1,1)
+QTD <- c(1,1,1,2,1,1,1,1,1,NA)
 tb_materiais <- data.frame(Materiais, QTD)
 
 #Tabela
