@@ -1,17 +1,10 @@
-ESCRITO EM 31/10/23
+ESCRITO EM 13/11/23
 ---
-PARA 01/11/23
+PARA 13/11/23
 ---
 Subir github:
 
 Estudar:
 
 Afazeres:
-	- Relatório
-		- Introdução
-		- Desenvolvimento
-			- Montagem do circuito
-			- Comparar simulação e experimento
-			- Cálculos teóricos, simulação e experimentais
-		- Conclusão
-		- Bibliografia
+Concluído
