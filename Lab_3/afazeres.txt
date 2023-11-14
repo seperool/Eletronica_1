@@ -1,0 +1,18 @@
+ESCRITO EM 13/11/23
+---
+PARA 14/11/23
+---
+Subir github:
+
+Estudar:
+
+Afazeres:
+	- Pré-relatório
+		- Introdução
+		- Objetivo
+		- Desenvolvimento
+			- Montagem do circuito
+			- Comparar simulação e experimento
+			- Cálculos teóricos, simulação e experimentais
+		- Conclusão
+		- Bibliografia
