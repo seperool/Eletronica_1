@@ -49,3 +49,4 @@ Repositório destinado a criação e armazenamento de relatórios de Eletrônica
 
 1. Experimento 1: Traçador de Curvas $V \times I$.\
 2. Experimento 2: Retificadores de Meia Onda.\
+3. Experimento 3: Polarização do TBJ.\
